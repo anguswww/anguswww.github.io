@@ -4,7 +4,6 @@ layout: default
 <article>
   <h1>{{ page.title | escape }}</h1>
   <p>{{ page.description | escape }}</p>
-  {% if page.sample %}<p><small>Example project — replace this with something of your own.</small></p>{% endif %}
   {{ content }}
   {% if page.project_url %}<p><a href="{{ page.project_url | escape }}">{{ page.link_label | default: 'View project' | escape }}</a></p>{% endif %}
   <p><a href="{{ '/projects/' | relative_url }}">Back to projects</a></p>

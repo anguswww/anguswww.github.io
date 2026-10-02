@@ -12,12 +12,12 @@ section: about
 <section aria-labelledby="notes-heading">
   <h2 id="notes-heading">Notes</h2>
   <ul>{% for note in site.posts limit: 2 %}{% include note-row.html %}{% endfor %}</ul>
-  {% if site.posts.size == 0 %}<p>No notes yet.</p>{% endif %}
+  {% if site.posts.size == 0 %}<p>Coming soon…</p>{% endif %}
   <p><a href="{{ '/notes/' | relative_url }}">All notes</a></p>
 </section>
 <section aria-labelledby="projects-heading">
   <h2 id="projects-heading">Projects</h2>
   <ul>{% assign projects = site.projects | sort: 'order' %}{% for project in projects limit: 2 %}{% include project-card.html %}{% endfor %}</ul>
-  {% if site.projects.size == 0 %}<p>No projects yet.</p>{% endif %}
+  {% if site.projects.size == 0 %}<p>Coming soon…</p>{% endif %}
   <p><a href="{{ '/projects/' | relative_url }}">All projects</a></p>
 </section>
