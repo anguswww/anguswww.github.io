@@ -1,0 +1,38 @@
+title: Angus
+description: A personal space for notes, projects, and things in progress.
+url: "https://anguswww.github.io"
+baseurl: ""
+lang: en
+timezone: Australia/Sydney
+permalink: /notes/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      section: notes
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      section: projects
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - AGENTS.md
+  - vendor

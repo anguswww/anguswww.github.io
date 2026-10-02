@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article>
+  <h1>{{ page.title | escape }}</h1>
+  <p><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></p>
+  {% if page.sample %}<p><small>Sample note — starter content for your own writing.</small></p>{% endif %}
+  {{ content }}
+  <p><a href="{{ '/notes/' | relative_url }}">Back to notes</a></p>
+</article>
