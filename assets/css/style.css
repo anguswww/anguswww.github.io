@@ -1,7 +1,9 @@
+@font-face { font-family: Inter; font-style: normal; font-weight: 100 900; font-display: swap; src: url('../fonts/InterVariable.woff2') format('woff2'); }
+@font-face { font-family: Inter; font-style: italic; font-weight: 100 900; font-display: swap; src: url('../fonts/InterVariable-Italic.woff2') format('woff2'); }
 :root { color-scheme: light; --bg: #fff; --fg: #222; --link: #28548b; --muted: #666; --surface: #f5f5f5; }
 :root[data-theme="dark"] { color-scheme: dark; --bg: #121a26; --fg: #e6e6e6; --link: #9bbfe8; --muted: #aaa; --surface: #ffffff0d; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme]) { color-scheme: dark; --bg: #121a26; --fg: #e6e6e6; --link: #9bbfe8; --muted: #aaa; --surface: #ffffff0d; } }
-body { max-width: 680px; margin: 3rem auto; padding: 0 1rem; font: 17px/1.65 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+body { max-width: 680px; margin: 3rem auto; padding: 0 1rem; font: 17px/1.65 -apple-system, BlinkMacSystemFont, Inter, system-ui, sans-serif; font-optical-sizing: auto; color: var(--fg); background: var(--bg); }
 a { color: var(--link); }
 nav { display: flex; flex-wrap: wrap; gap: 1.5rem; }
 nav [aria-current] { color: inherit; font-weight: 600; }
