@@ -4,6 +4,8 @@ description: A quiet home for writing, projects, and a little bit of personality
 category: Web
 status: Ongoing
 order: 1
+image: /assets/projects/this-website.svg
+image_alt: A minimal browser window with a profile, notes, and projects.
 project_url: https://github.com/anguswww/anguswww.github.io
 link_label: View the source
 ---
@@ -11,7 +13,7 @@ A personal website built with Jekyll. Three simple spaces: an introduction, a co
 
 ## The idea
 
-Keep the interface quiet and give the content room to breathe. A readable column, ordinary links, and just ten lines of CSS.
+Keep the interface quiet and give the content room to breathe. A readable column, ordinary links, and a small stylesheet.
 
 ## Built with
 

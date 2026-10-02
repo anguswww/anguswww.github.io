@@ -2,13 +2,15 @@
 title: About
 section: about
 ---
-<h1>Hi, I'm {{ site.data.profile.name | escape }}.</h1>
-<p>{{ site.data.profile.intro | escape }}</p>
-<p>{{ site.data.profile.bio | escape }}</p>
-<p>{{ site.data.profile.about | escape }}</p>
-<p><a href="{{ site.data.profile.github }}">GitHub</a></p>
+<div class="profile-heading">
+  <img src="{{ '/assets/profile.png' | relative_url }}" class="profile-image" alt="Profile photo" width="80" height="80">
+  <h1>anguswww</h1>
+</div>
+<p>Hi! I'm Angus, currently a Computer Science student. I'm interested in modelling and shaping the future impacts of AI on society. I would describe myself as a <a href="https://en.wikipedia.org/wiki/Rationalist_community" target="_blank" rel="noopener noreferrer">rationalist</a> or at least rationalist adjacent.</p>
+<p>This site is a place to collate thoughts and projects. Basically just a minimally edited personal blog and portfolio.</p>
+<p><a href="mailto:anguswwww@gmail.com">anguswwww@gmail.com</a> | <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></p>
 <section aria-labelledby="notes-heading">
-  <h2 id="notes-heading">Recent notes</h2>
+  <h2 id="notes-heading">Notes</h2>
   <ul>{% for note in site.posts limit: 2 %}{% include note-row.html %}{% endfor %}</ul>
   {% if site.posts.size == 0 %}<p>No notes yet.</p>{% endif %}
   <p><a href="{{ '/notes/' | relative_url }}">All notes</a></p>

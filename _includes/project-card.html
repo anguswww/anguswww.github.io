@@ -1,4 +1,16 @@
+{% if include.card %}
+<li class="project-card">
+  <a class="project-card-link" href="{{ project.url | relative_url }}">
+    <img class="project-card-image" src="{{ project.image | default: '/assets/projects/placeholder.svg' | relative_url }}" alt="{{ project.image_alt | default: '' | escape }}" width="640" height="400" loading="lazy" decoding="async">
+    <div class="project-card-content">
+      <h2>{{ project.title | escape }}</h2>
+      <p class="project-card-description">{{ project.description | escape }}</p>
+    </div>
+  </a>
+</li>
+{% else %}
 <li>
   <a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a>
   <p>{{ project.description | escape }}</p>
 </li>
+{% endif %}
