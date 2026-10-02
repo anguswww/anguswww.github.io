@@ -47,4 +47,8 @@ pre { overflow-x: auto; padding: 1rem; background: var(--surface); }
 .project-card-link:hover h2 { text-decoration: underline; text-underline-offset: .15em; }
 .project-card-description { margin: 0; font-size: .9rem; }
 @media (max-width: 560px) { .project-grid { grid-template-columns: 1fr; gap: 1.25rem; } }
-@media (max-width: 480px) { .site-header { gap: .5rem; } .site-header nav { gap: .75rem; font-size: .875rem; } }
+@media (max-width: 480px) {
+  .site-header { gap: .5rem; }
+  .site-header nav { gap: 1rem; font-size: 1.0625rem; }
+  .site-header nav a { display: inline-flex; align-items: center; min-height: 44px; }
+}
