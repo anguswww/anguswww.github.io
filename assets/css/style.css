@@ -1,6 +1,6 @@
 :root { color-scheme: light; --bg: #fff; --fg: #222; --link: #28548b; --muted: #666; --surface: #f5f5f5; }
-:root[data-theme="dark"] { color-scheme: dark; --bg: #121a26; --fg: #e6e6e1; --link: #9bbfe8; --muted: #aaa; --surface: #ffffff0d; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme]) { color-scheme: dark; --bg: #121a26; --fg: #e6e6e1; --link: #9bbfe8; --muted: #aaa; --surface: #ffffff0d; } }
+:root[data-theme="dark"] { color-scheme: dark; --bg: #121a26; --fg: #e6e6e6; --link: #9bbfe8; --muted: #aaa; --surface: #ffffff0d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) { color-scheme: dark; --bg: #121a26; --fg: #e6e6e6; --link: #9bbfe8; --muted: #aaa; --surface: #ffffff0d; } }
 body { max-width: 680px; margin: 3rem auto; padding: 0 1rem; font: 17px/1.65 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
 a { color: var(--link); }
 nav { display: flex; flex-wrap: wrap; gap: 1.5rem; }
@@ -9,6 +9,18 @@ h1, h2, h3 { line-height: 1.25; }
 main { margin: 3rem 0; }
 section, article { margin: 2rem 0; }
 footer, time { color: var(--muted); font-size: .9rem; }
+.note-list { list-style: none; padding: 0; margin: 1.25rem 0; }
+.note-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); column-gap: 1.25rem; row-gap: .25rem; padding: .85rem 0; border-bottom: 1px solid #8883; }
+.note-title { grid-column: 1; grid-row: 1; font-weight: 600; }
+.note-row .note-description { grid-column: 2; grid-row: 1 / span 2; margin: 0; align-self: start; }
+.note-date { grid-column: 1; grid-row: 2; }
+.note-description { color: var(--muted); font-size: .9rem; margin: .25rem 0; }
+.post-description { margin-top: -.5rem; }
+@media (max-width: 480px) {
+  .note-row { grid-template-columns: minmax(0, 1fr); }
+  .note-row .note-description { grid-column: 1; grid-row: 2; }
+  .note-date { grid-row: 3; }
+}
 .rss-link { display: inline-flex; align-items: center; gap: 5px; }
 img { max-width: 100%; height: auto; }
 pre { overflow-x: auto; padding: 1rem; background: var(--surface); }

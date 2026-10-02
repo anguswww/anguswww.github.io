@@ -1,5 +1,5 @@
-<li>
-  <a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>
-  <br><time datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: '%d %b %Y' }}</time>
-  <p>{{ note.description | escape }}</p>
+<li class="note-row">
+  <a class="note-title" href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>
+  {% if note.description %}<p class="note-description">{{ note.description | escape }}</p>{% endif %}
+  <time class="note-date" datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: '%d %b %Y' }}</time>
 </li>

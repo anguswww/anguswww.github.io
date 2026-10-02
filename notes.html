@@ -2,10 +2,10 @@
 title: Notes
 section: notes
 permalink: /notes/
-description: Thoughts, discoveries, and things worth writing down.
+description: Somewhere between completely unresearched notes and fully formed effortposts.
 ---
 <h1>Notes</h1>
-<p>Thoughts, discoveries, and things worth writing down.</p>
-<ul>{% for note in site.posts %}{% include note-row.html %}{% endfor %}</ul>
+<p>Somewhere between completely unresearched notes and fully formed effortposts.</p>
+<ul class="note-list" role="list">{% for note in site.posts %}{% include note-row.html %}{% endfor %}</ul>
 {% if site.posts.size == 0 %}<p>Coming soon…</p>{% endif %}
 <p><a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a></p>

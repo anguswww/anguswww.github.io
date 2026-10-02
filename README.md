@@ -59,4 +59,4 @@ Write about your project here.
 ```
 
 Optional project fields include `image`, `image_alt`, `project_url`, and `link_label`.
-New entries automatically appear on their collection page and the homepage; notes also appear in RSS.
+New entries automatically appear on their collection page; the homepage shows the five latest notes and two projects. Notes also appear in RSS.

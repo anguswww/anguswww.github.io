@@ -3,6 +3,7 @@ layout: default
 ---
 <article>
   <h1>{{ page.title | escape }}</h1>
+  {% if page.description %}<p class="note-description post-description">{{ page.description | escape }}</p>{% endif %}
   <p><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time></p>
   {{ content }}
   <p><a href="{{ '/notes/' | relative_url }}">Back to notes</a></p>
