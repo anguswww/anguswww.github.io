@@ -9,6 +9,8 @@ import spaRouterScript from "../../components/scripts/spa.inline"
 import popoverScript from "../../components/scripts/popover.inline"
 // @ts-ignore
 import prefetchScript from "../../components/scripts/prefetch.inline"
+// @ts-ignore
+import oculusScript from "../../components/scripts/oculus.inline"
 import baseStyles from "../../styles/base.scss"
 import customStyles from "../../styles/custom.scss"
 import popoverStyle from "../../components/styles/popover.scss"
@@ -92,6 +94,9 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
   const cfg = ctx.cfg.configuration
 
   // popovers
+  // Oculus theme: tag internal links with their target page's status
+  componentResources.afterDOMLoaded.push(oculusScript)
+
   if (cfg.enablePopovers) {
     componentResources.afterDOMLoaded.push(popoverScript)
     componentResources.css.push(popoverStyle)

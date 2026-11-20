@@ -12,33 +12,47 @@ configuration:
     - templates
     - .obsidian
   theme:
+    # "Oculus": drawn from the shelved OpenAI identity/UI concept by Area.
+    # White page, slate chrome, flat character colours. Character colours and
+    # component styling live in quartz/styles/custom.scss.
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
-      code: IBM Plex Mono
+      title:
+        name: EB Garamond
+        weights: [500, 600]
+      header:
+        name: EB Garamond
+        weights: [400, 500, 600]
+        includeItalic: true
+      body:
+        name: Inter
+        weights: [400, 500, 600, 700]
+        includeItalic: false
+      code:
+        name: JetBrains Mono
+        weights: [400, 500]
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#ffffff"
+        lightgray: "#e6eaee"
+        gray: "#8ea4b8"
+        darkgray: "#262a2c"
+        dark: "#000000"
+        secondary: "#27b9ff"
+        tertiary: "#b388e4"
+        highlight: "#f3f9ff"
+        textHighlight: "#ffb80066"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#1e1e1e"
+        lightgray: "#3a3a3a"
+        gray: "#8ea4b8"
+        darkgray: "#e8e8e8"
+        dark: "#ffffff"
+        secondary: "#27b9ff"
+        tertiary: "#b388e4"
+        highlight: "#2a2a2a"
+        textHighlight: "#ffb80055"
   links:
     markdownLinkResolution: shortest
   contentIndex:
@@ -58,7 +72,7 @@ plugins:
     enabled: true
     options:
       theme:
-        light: github-light
+        light: github-dark
         dark: github-dark
       keepBackground: false
     order: 20
@@ -150,7 +164,8 @@ plugins:
     layout:
       position: left
       priority: 50
-  - source: "@quartz-community/graph"
+  # Oculus fork: nodes coloured by status tag (see plugins/oculus-graph/README.md)
+  - source: ./plugins/oculus-graph
     enabled: true
     layout:
       position: right
@@ -179,10 +194,11 @@ plugins:
       position: beforeBody
       priority: 20
   - source: "@quartz-community/tag-list"
-    enabled: false
+    enabled: true
     layout:
       position: beforeBody
       priority: 30
+      condition: has-tags
   - source: "@quartz-community/page-title"
     enabled: true
     layout:
@@ -224,7 +240,17 @@ plugins:
       position: footer
       priority: 50
   - source: "@quartz-community/recent-notes"
-    enabled: false
+    enabled: true
+    options:
+      title: Recently updated
+      limit: 8
+      showTags: true
+      hideTagPages: true
+      hideFolderPages: true
+    layout:
+      position: afterBody
+      priority: 5
+      condition: index
   - source: "@quartz-community/spacer"
     enabled: true
     options: {}
@@ -246,7 +272,7 @@ plugins:
         - tags
         - aliases
       excludedProperties: []
-      hidePropertiesView: false
+      hidePropertiesView: true
     order: 5
     layout:
       position: beforeBody

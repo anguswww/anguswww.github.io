@@ -1,3 +1,1222 @@
+@use "sass:list";
+@use "sass:map";
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Character glyphs (generated). Single-colour versions are used as masks;
+// the dock is a multi-colour row.
+$glyphs: (
+  open: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23000'/%3E%3C/svg%3E"),
+  sunny: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='12.00,0.50 14.53,5.90 20.13,3.87 18.10,9.47 23.50,12.00 18.10,14.53 20.13,20.13 14.53,18.10 12.00,23.50 9.47,18.10 3.87,20.13 5.90,14.53 0.50,12.00 5.90,9.47 3.87,3.87 9.47,5.90' fill='%23000' stroke='%23000' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E"),
+  warp: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cmask id='m'%3E%3Crect width='24' height='24' fill='%23fff'/%3E%3Cg fill='%23000' transform='rotate(-35 12 12)'%3E%3Crect x='-4' y='7.2' width='20' height='2.6'/%3E%3Crect x='8' y='14.2' width='20' height='2.6'/%3E%3C/g%3E%3C/mask%3E%3Ccircle cx='12' cy='12' r='10' fill='%23000' mask='url(%23m)'/%3E%3C/svg%3E"),
+  ember: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23000'%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(0.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(25.714285714285715 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(51.42857142857143 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(77.14285714285714 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(102.85714285714286 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(128.57142857142858 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(154.28571428571428 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(180.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(205.71428571428572 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(231.42857142857142 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(257.14285714285717 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(282.85714285714283 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(308.57142857142856 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(334.2857142857143 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='3.6' fill='%23000'/%3E%3C/svg%3E"),
+  blossom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23000'%3E%3Ccircle cx='12.00' cy='6.80' r='4.6'/%3E%3Ccircle cx='16.95' cy='10.39' r='4.6'/%3E%3Ccircle cx='15.06' cy='16.21' r='4.6'/%3E%3Ccircle cx='8.94' cy='16.21' r='4.6'/%3E%3Ccircle cx='7.05' cy='10.39' r='4.6'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='2.4' fill='%23fff'/%3E%3C/svg%3E"),
+  leaf: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.8 C19.5 6 19.5 18 12 22.2 C4.5 18 4.5 6 12 1.8Z' fill='%23000' transform='rotate(35 12 12)'/%3E%3C/svg%3E"),
+);
+$dock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 162 24'%3E%3Cg transform='translate(0 0)'%3E%3Cg fill='%23ff7859'%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(0.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(25.714285714285715 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(51.42857142857143 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(77.14285714285714 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(102.85714285714286 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(128.57142857142858 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(154.28571428571428 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(180.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(205.71428571428572 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(231.42857142857142 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(257.14285714285717 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(282.85714285714283 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(308.57142857142856 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(334.2857142857143 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='3.6' fill='%23ff7859'/%3E%3C/g%3E%3Cpath d='M29 12 H41 M37 8.5 L41 12 L37 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(46 0)'%3E%3Cpolygon points='12.00,0.50 14.53,5.90 20.13,3.87 18.10,9.47 23.50,12.00 18.10,14.53 20.13,20.13 14.53,18.10 12.00,23.50 9.47,18.10 3.87,20.13 5.90,14.53 0.50,12.00 5.90,9.47 3.87,3.87 9.47,5.90' fill='%23ffb800' stroke='%23ffb800' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/g%3E%3Cpath d='M75 12 H87 M83 8.5 L87 12 L83 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(92 0)'%3E%3Cpath d='M12 1.8 C19.5 6 19.5 18 12 22.2 C4.5 18 4.5 6 12 1.8Z' fill='%231dcb43' transform='rotate(35 12 12)'/%3E%3C/g%3E%3Cpath d='M121 12 H133 M129 8.5 L133 12 L129 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(138 0)'%3E%3Ccircle cx='12' cy='12' r='10' fill='%2327b9ff'/%3E%3C/g%3E%3C/svg%3E");
+$dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 12'%3E%3Ccircle cx='6' cy='6' r='4' fill='%23ff7859'/%3E%3Ccircle cx='22' cy='6' r='4' fill='%23ffb800'/%3E%3Ccircle cx='38' cy='6' r='4' fill='%231dcb43'/%3E%3Ccircle cx='54' cy='6' r='4' fill='%2327b9ff'/%3E%3C/svg%3E");
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  OCULUS
+//  Built from the product mockups in Area's shelved OpenAI concept (2023).
+//
+//  The rules, as read from the images:
+//   1. Colour is identity. Each "character" owns one saturated colour and
+//      anything that belongs to it is painted solid in that colour: no tints
+//      on borders, no gradients, no shadows, no glow.
+//   2. Two voices. Interface and input are a plain grotesk; content (the
+//      character speaking, the document being written) is an old-style serif.
+//   3. Quiet scaffolding. Everything that is not content is slate #8ea4b8 on
+//      white or on a pale #f3f9ff panel, so the colour fields carry hierarchy.
+//   4. Circles mark identity; generous rounded rectangles hold things.
+//   5. Tools are objects: a charcoal chassis around a black screen.
+//
+//  Colour means status. A page's status tag (mutually exclusive) picks its
+//  character, and that colour follows the page everywhere it appears:
+//     #outline → ember (coral)   rough, needs work
+//     #draft → sunny (sun)       in progress
+//     #semi-polished → leaf      nearly there
+//     #polished → open (sky)     settled: the default voice
+//  Pages without a status fall back to slate. Violet and pink stay off the
+//  status scale and are used only for example/question and quote callouts.
+// ─────────────────────────────────────────────────────────────────────────────
+
+:root {
+  // character colours (sampled from the concept images)
+  --open: #27b9ff;
+  --sunny: #ffb800;
+  --warp: #b388e4;
+  --ember: #ff7859;
+  --blossom: #f271c9;
+  --leaf: #1dcb43;
+
+  // what sits on top of each fill
+  --on-open: #ffffff;
+  --on-sunny: #262a2c;
+  --on-warp: #ffffff;
+  --on-ember: #ffffff;
+  --on-blossom: #ffffff;
+  --on-leaf: #ffffff;
+
+  // text-weight versions for when a character "speaks" in serif on white
+  --open-ink: #139fe6;
+  --sunny-ink: #e58a00;
+  --warp-ink: #9a6ad6;
+  --ember-ink: #f05a3a;
+  --blossom-ink: #db4eb2;
+  --leaf-ink: #12a336;
+
+  --slate: #8ea4b8;
+  --panel: #f3f9ff;
+  --rule: #e6eaee;
+  --chassis: #343434;
+  --screen: #000000;
+  --ink: #262a2c;
+  --tint-base: #ffffff;
+
+  --uiFont: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+
+  --r-lg: 16px;
+  --r-md: 11px;
+  --r-sm: 7px;
+
+  // the current page's status colour (slate until a status tag says otherwise)
+  --accent: var(--slate);
+  --on-accent: #ffffff;
+  --accent-ink: var(--slate);
+}
+
+:root[saved-theme="dark"] {
+  --panel: #2a2a2a;
+  --rule: #3a3a3a;
+  --chassis: #343434;
+  --screen: #000000;
+  --ink: #e8e8e8;
+  --tint-base: #1e1e1e;
+
+  --open-ink: #27b9ff;
+  --sunny-ink: #ffb800;
+  --warp-ink: #c4a0f0;
+  --ember-ink: #ff8a6e;
+  --blossom-ink: #f58ad5;
+  --leaf-ink: #3fd862;
+}
+
+:root {
+  --glyph: #{map.get($glyphs, open)};
+}
+
+// status → character. Order matters only if a page breaks the one-status rule.
+$status-char: (
+  outline: ember,
+  draft: sunny,
+  semi-polished: leaf,
+  polished: open,
+);
+
+// The page's own status comes from the tag row in its header (not from the
+// "Recently updated" list, which carries every status).
+@each $st, $c in $status-char {
+  body:has(.page-header ul.tags a.tag-link[href$="/#{$st}" i]) {
+    --glyph: #{map.get($glyphs, $c)};
+    --accent: var(--#{$c});
+    --on-accent: var(--on-#{$c});
+    --accent-ink: var(--#{$c}-ink);
+  }
+}
+
+// ── Canvas ──────────────────────────────────────────────────────────────────
+
+body {
+  background: var(--light);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+// Interface text uses the plain grotesk.
+.sidebar,
+.page-header,
+footer,
+.popover,
+.search-container,
+.callout-title,
+figcaption,
+table {
+  font-family: var(--uiFont);
+}
+
+// ── Left sidebar: a grounded panel ──────────────────────────────────────────
+// Flush to the top, bottom and left edge of the window: the pale panel runs
+// on past the page container to the viewport edge. The current page is a tab
+// cut out of it that joins the white page (see Explorer).
+
+@mixin glyph-mask($size: contain) {
+  -webkit-mask: var(--glyph) center / $size no-repeat;
+  mask: var(--glyph) center / $size no-repeat;
+}
+
+// Everything in the left panel hangs from one edge (2rem in). Explorer rows
+// pull back by their own padding so their dots sit on that edge too.
+$side-inset: 2rem;
+$row-pad: 0.7rem;
+
+.sidebar {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@media all and not ($mobile) {
+  // breathing room between the panel and the reading column
+  .page > #quartz-body .center,
+  .page > #quartz-body > footer {
+    box-sizing: border-box;
+    padding-left: 3.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .page > #quartz-body .sidebar.left {
+    background: var(--panel);
+    padding: 3.25rem 0 1.75rem $side-inset;
+
+    & > :not(.explorer) {
+      margin-right: 2rem;
+    }
+
+    // pull the explorer back by one row's padding so its dots, the label
+    // and the wordmark share the panel's left edge
+    & > .explorer {
+      margin-left: -$row-pad;
+      & .title-button {
+        padding-left: $row-pad;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 100%;
+      width: 100vw;
+      background: var(--panel);
+    }
+
+    // the speaking character's mark at the foot of the panel, in slate
+    &::after {
+      content: "";
+      flex: none;
+      margin-top: auto;
+      width: 2.6rem;
+      height: 2.6rem;
+      background: var(--slate);
+      @include glyph-mask;
+    }
+  }
+}
+
+// ── Site title: the slate serif wordmark ────────────────────────────────────
+
+.page-title {
+  font-family: var(--titleFont);
+  font-size: 1.55rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-kerning: normal;
+  font-synthesis: none;
+  line-height: 1;
+  margin: 0 0 0.75rem;
+
+  & a {
+    color: var(--slate);
+    background: none;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+// ── Labels: slate, bold, tracked caps ("HISTORY") ──────────────────────────
+
+.explorer .title-button h2,
+.toc .toc-header h3,
+.graph > h3,
+.backlinks > h3,
+.note-properties-title,
+.content-meta,
+.breadcrumb-container,
+section.footnotes > h2 {
+  font-family: var(--uiFont);
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+  margin: 0;
+}
+
+.sidebar .fold,
+.toc-header .fold {
+  color: var(--slate);
+}
+
+// ── Search: outlined slate field ("+ New Conversation") ────────────────────
+
+.search > .search-button {
+  height: 2.5rem;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--slate);
+  background: transparent;
+  box-shadow: none;
+  font-family: var(--uiFont);
+
+  & p {
+    color: var(--slate);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  & svg .search-path {
+    stroke: var(--slate);
+    stroke-width: 2.2px;
+  }
+  &:hover {
+    background: var(--light);
+  }
+}
+
+.search > .search-container {
+  background: color-mix(in srgb, var(--dark) 18%, transparent);
+  backdrop-filter: none;
+
+  & > .search-space {
+    border-radius: var(--r-lg);
+    border: none;
+    box-shadow: none;
+    background: var(--light);
+    overflow: hidden;
+
+    & > input {
+      border-radius: 0;
+      border: none;
+      border-bottom: 1.5px solid var(--rule);
+      background: var(--light);
+      font-family: var(--uiFont);
+      font-size: 1.15rem;
+      padding: 1rem 1.2rem;
+    }
+
+    & .result-card {
+      border-radius: var(--r-md);
+      font-family: var(--uiFont);
+      &:hover,
+      &:focus,
+      &.focus {
+        background: var(--accent);
+        color: var(--on-accent);
+        & h3,
+        & p,
+        & .highlight {
+          color: var(--on-accent);
+        }
+      }
+    }
+  }
+}
+
+.darkmode,
+.readermode {
+  & svg {
+    fill: var(--slate);
+    stroke: var(--slate);
+  }
+  &:hover svg {
+    fill: var(--accent);
+    stroke: var(--accent);
+  }
+}
+
+// ── Explorer: the history list ──────────────────────────────────────────────
+
+.explorer {
+  & .explorer-content ul li > a,
+  & .folder-container .folder-title {
+    font-family: var(--uiFont);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  & .explorer-content ul li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1.25rem 0.4rem $row-pad;
+    margin: 0;
+    border-radius: 0;
+    opacity: 1;
+    letter-spacing: -0.005em;
+
+    // a page with no status is an empty slate ring; status fills it
+    &::before {
+      content: "";
+      flex: none;
+      box-sizing: border-box;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      background: var(--dot, transparent);
+      box-shadow: inset 0 0 0 1.5px var(--dot, var(--slate));
+    }
+
+    &:hover {
+      color: var(--dark);
+    }
+  }
+
+  @media all and not ($mobile) {
+    // The current page: a tab cut from the panel that runs into the page,
+    // like the character dock's tabs rising out of the composer.
+    & .explorer-content ul li > a.active {
+      background: var(--light);
+      color: var(--dark);
+      font-weight: 600;
+      border-radius: var(--r-md) 0 0 var(--r-md);
+
+      // the dot becomes the page's character
+      &::before {
+        width: 1rem;
+        height: 1rem;
+        margin: -0.15rem;
+        border-radius: 0;
+        box-shadow: none;
+        background: var(--accent);
+        @include glyph-mask;
+      }
+
+      // concave fillets where the tab meets the panel above and below
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: calc(-1 * var(--r-md));
+        bottom: calc(-1 * var(--r-md));
+        width: var(--r-md);
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 0 0, var(--panel) calc(var(--r-md) - 0.5px), var(--light) var(--r-md)) top / var(--r-md) var(--r-md) no-repeat,
+          radial-gradient(circle at 0 100%, var(--panel) calc(var(--r-md) - 0.5px), var(--light) var(--r-md)) bottom / var(--r-md) var(--r-md) no-repeat;
+      }
+    }
+  }
+
+  @media all and ($mobile) {
+    & .explorer-content ul li > a.active {
+      font-weight: 600;
+      color: var(--dark);
+      &::before {
+        background: var(--accent);
+      }
+    }
+  }
+
+  // each row's dot is its page's status (data-status set by oculus.inline.ts)
+  @each $st, $c in $status-char {
+    & a[data-status="#{$st}"] {
+      --dot: var(--#{$c});
+    }
+  }
+
+  & .folder-container {
+    & .folder-title {
+      font-weight: 600;
+    }
+    & svg {
+      color: var(--slate);
+    }
+  }
+}
+
+// ── Article header ──────────────────────────────────────────────────────────
+
+.breadcrumb-container {
+  gap: 0.3rem;
+  & a {
+    color: var(--slate);
+    font-weight: 700;
+    background: none;
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+// The title: a big old-style serif, introduced by the page's character.
+h1.article-title {
+  font-family: var(--headerFont);
+  font-size: clamp(2.4rem, 4.4vw, 3.3rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--dark);
+  margin: 1.4rem 0 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+
+  &::before {
+    content: "";
+    flex: none;
+    width: 0.72em;
+    height: 0.72em;
+    background: var(--accent);
+    @include glyph-mask;
+    transform: translateY(0.03em);
+  }
+}
+
+// Home: the whole cast stands above the title.
+body[data-slug="index"] h1.article-title {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  &::before {
+    width: 10.125rem;
+    height: 1.5rem;
+    background: $dock left center / contain no-repeat;
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+
+.content-meta {
+  margin: 0 0 0.6rem;
+}
+
+// ── Body: the content voice is serif ────────────────────────────────────────
+
+article {
+  font-family: var(--headerFont);
+  font-size: 1.24rem;
+  line-height: 1.55;
+  color: var(--ink);
+
+  & p,
+  & li,
+  & td,
+  & dd {
+    color: var(--ink);
+  }
+}
+
+article :is(h1, h2, h3, h4) {
+  font-family: var(--headerFont);
+  color: var(--dark);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+article h1 {
+  font-size: 2.2rem;
+  line-height: 1.1;
+}
+article h2 {
+  font-size: 1.75rem;
+  line-height: 1.15;
+  margin-top: 2.6rem;
+}
+article h3 {
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+article h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+article h5,
+article h6 {
+  font-family: var(--uiFont);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+}
+
+strong,
+.page article p > strong {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+// ── Links: dark text, a flat underline in the page colour ──────────────────
+
+a {
+  color: var(--ink);
+  font-weight: inherit;
+  transition: none;
+}
+
+article a.internal:not(.tag-link):not(:has(> img)),
+article a.external {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: var(--dark);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+
+  &:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+    text-decoration-color: transparent;
+    border-radius: 3px;
+  }
+}
+
+article a.external .external-icon {
+  display: none;
+}
+
+article :is(h1, h2, h3, h4, h5, h6) a.internal {
+  text-decoration: none !important;
+  &:hover {
+    background: none !important;
+    color: inherit !important;
+  }
+}
+
+// ── Tags: one line of solid chips under the title ──────────────────────────
+
+ul.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.9rem;
+
+  & > li {
+    margin: 0;
+  }
+}
+
+a.internal.tag-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.14rem 0.55rem;
+  margin: 0;
+  border-radius: var(--r-sm);
+  font-family: var(--uiFont);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  // topic tags are scaffolding: colour is reserved for status
+  background: var(--panel);
+  color: var(--slate);
+  text-decoration: none;
+
+  &::before {
+    content: "#" !important;
+    opacity: 0.75;
+    margin-right: 0.08rem;
+  }
+  &:hover {
+    background: var(--slate);
+    color: #fff;
+  }
+}
+
+// Status tags (#Outline → #Draft → #Semi-Polished → #Polished) lead the row
+// as a solid chip in the status colour, with a circle that fills as the page
+// matures.
+$status-fill: (
+  outline: 0%,
+  draft: 33.4%,
+  semi-polished: 66.7%,
+  polished: 100%,
+);
+
+@each $st, $c in $status-char {
+  ul.tags li:has(> a.tag-link[href$="/#{$st}" i]) {
+    order: -1;
+  }
+  a.internal.tag-link[href$="/#{$st}" i] {
+    gap: 0.42rem;
+    background: var(--#{$c});
+    color: var(--on-#{$c});
+
+    &::before {
+      content: "" !important;
+      opacity: 1;
+      margin: 0;
+      width: 0.72rem;
+      height: 0.72rem;
+      border-radius: 50%;
+      background: conic-gradient(currentColor 0 map.get($status-fill, $st), transparent 0);
+      box-shadow: inset 0 0 0 1.5px currentColor;
+    }
+    &:hover {
+      background: var(--dark);
+      color: var(--light);
+    }
+  }
+}
+
+// ── Lists: flat circles ─────────────────────────────────────────────────────
+
+article ul:not(.overflow):not(.tags):not(.section-ul) {
+  list-style: none;
+  padding-left: 1.5rem;
+
+  & > li.task-list-item {
+    list-style: none;
+  }
+
+  & > li:not(.task-list-item) {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1.2rem;
+      top: 0.58em;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  }
+  & ul > li:not(.task-list-item)::before {
+    background: var(--slate);
+  }
+}
+
+article ol > li::marker {
+  color: var(--accent-ink);
+  font-weight: 500;
+}
+
+article input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0 0.55rem 0 -1.5rem;
+  vertical-align: -0.12em;
+  border-radius: 50%;
+  border: 2px solid var(--slate);
+  background: transparent;
+  cursor: pointer;
+
+  &:checked {
+    border: none;
+    background: var(--accent);
+    box-shadow: inset 0 0 0 3.5px var(--light);
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+}
+
+.page article li:has(> input[type="checkbox"]:checked) {
+  color: var(--slate);
+  text-decoration-color: var(--slate);
+}
+
+// ── Blockquote: the character speaking ──────────────────────────────────────
+// No box, no bar. Serif in the character's colour, with its circle beside it.
+
+article blockquote:not(.callout):not(.transclude) {
+  position: relative;
+  margin: 1.75rem 0;
+  padding: 0 0 0 2.4rem;
+  border: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--accent);
+    @include glyph-mask;
+  }
+
+  & p {
+    color: var(--accent-ink);
+    font-size: 1.3rem;
+    line-height: 1.45;
+    margin: 0 0 0.5rem;
+  }
+}
+
+// ── Rule: the cast in a row of dots ─────────────────────────────────────────
+
+article hr {
+  height: 12px;
+  border: none;
+  background: $dots center / auto 100% no-repeat;
+  margin: 3rem 0;
+}
+
+// ── Code: the tool chassis ──────────────────────────────────────────────────
+
+code {
+  font-family: var(--codeFont);
+  font-size: 0.82em;
+}
+
+article :is(p, li, td) > code {
+  background: var(--panel);
+  color: var(--dark);
+  border: none;
+  border-radius: 5px;
+  padding: 0.08rem 0.28rem;
+}
+
+figure[data-rehype-pretty-code-figure] {
+  margin: 1.6rem 0;
+  padding: 7px;
+  background: var(--chassis);
+  border-radius: var(--r-lg);
+
+  // a titled block gets a tab rising out of the chassis, carrying the name
+  // of the file and the mark of the character "piloting" it
+  &:has(> figcaption) {
+    position: relative;
+    margin-top: 3.2rem;
+  }
+
+  & > figcaption,
+  & > [data-rehype-pretty-code-title] {
+    position: absolute;
+    left: 22px;
+    bottom: 100%;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--uiFont) !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    background: var(--chassis) !important;
+    border: none !important;
+    border-radius: 12px 12px 0 0;
+    margin: 0 !important;
+    padding: 0 1rem 0 0.8rem !important;
+
+    &::before {
+      content: "";
+      width: 0.95rem;
+      height: 0.95rem;
+      background: var(--accent);
+      @include glyph-mask;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -12px;
+      right: -12px;
+      bottom: 0;
+      height: 12px;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 0 0, transparent 11.5px, var(--chassis) 12px) left bottom / 12px 12px no-repeat,
+        radial-gradient(circle at 100% 0, transparent 11.5px, var(--chassis) 12px) right bottom / 12px 12px no-repeat;
+    }
+  }
+
+  & > pre {
+    margin: 0;
+    background: var(--screen) !important;
+    border: none !important;
+    border-radius: var(--r-md) !important;
+    box-shadow: none;
+    padding: 0.9rem 0 !important;
+  }
+}
+
+pre > code {
+  background: none !important;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+pre .clipboard-button {
+  background: var(--accent) !important;
+  border: none !important;
+  border-radius: var(--r-sm) !important;
+  & svg {
+    fill: var(--on-accent) !important;
+  }
+}
+
+kbd {
+  font-family: var(--uiFont);
+  font-size: 0.72em;
+  font-weight: 700;
+  padding: 0.12rem 0.45rem;
+  border-radius: 6px;
+  border: none;
+  background: var(--slate);
+  color: #fff;
+}
+
+// ── Tables: plain, with a slate caption row ────────────────────────────────
+
+article .table-container {
+  margin: 1.6rem 0;
+  overflow-x: auto;
+  & > table {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+article table {
+  border-collapse: collapse;
+  font-size: 0.95rem;
+
+  & th {
+    font-family: var(--uiFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    text-align: left;
+    padding: 0.6rem 1rem 0.6rem 0;
+    border-bottom: 1.5px solid var(--rule);
+  }
+  & td {
+    font-family: var(--uiFont);
+    padding: 0.6rem 1rem 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  & tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// ── Images & embeds ─────────────────────────────────────────────────────────
+
+article img,
+article video {
+  border-radius: var(--r-lg);
+}
+
+article object[type="image/svg+xml"] {
+  display: block;
+  width: 100%;
+  height: auto;
+  clip-path: inset(0 round var(--r-lg));
+}
+
+// Mermaid diagrams on the pale panel.
+article pre:has(> code.mermaid) {
+  background: var(--panel) !important;
+  border: none !important;
+  border-radius: var(--r-lg) !important;
+}
+
+// Transclusion: a pale tinted page, like the Writer document.
+article blockquote.transclude {
+  border: none !important;
+  border-radius: var(--r-lg);
+  background: color-mix(in srgb, var(--accent) 12%, var(--tint-base));
+  padding: 0.6rem 1.4rem !important;
+  margin: 1.4rem 0;
+}
+
+// ── Callouts: a coloured frame around a tinted page (the Writer tool) ──────
+
+.callout {
+  --fill: var(--open);
+  --on-fill: var(--on-open);
+  border: none;
+  border-radius: var(--r-lg);
+  background: var(--fill);
+  padding: 0 6px;
+  box-shadow: none;
+  font-family: var(--headerFont);
+
+  & > .callout-title {
+    padding: 0.6rem 0.55rem;
+    gap: 0.5rem;
+    font-family: var(--uiFont);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--on-fill);
+
+    & .callout-icon,
+    & .fold-callout-icon {
+      background-color: var(--on-fill);
+    }
+    & .callout-title-inner,
+    & .callout-title-inner p {
+      color: var(--on-fill);
+      font-weight: 700;
+    }
+  }
+
+  & > .callout-content {
+    background: color-mix(in srgb, var(--fill) 14%, var(--tint-base));
+    border-radius: var(--r-md);
+    padding: 0.15rem 1.1rem;
+    margin-bottom: 6px;
+    color: var(--ink);
+
+    & > :first-child {
+      margin-top: 0.85rem;
+    }
+    & > :last-child {
+      margin-bottom: 0.85rem;
+    }
+  }
+
+  &.is-collapsed > .callout-content {
+    display: none;
+  }
+}
+
+@mixin fill($c) {
+  --fill: var(--#{$c});
+  --on-fill: var(--on-#{$c});
+}
+
+.callout {
+  &[data-callout="note"],
+  &[data-callout="abstract"],
+  &[data-callout="info"] {
+    @include fill(open);
+  }
+  &[data-callout="todo"] {
+    @include fill(sunny);
+  }
+  &[data-callout="tip"],
+  &[data-callout="success"] {
+    @include fill(leaf);
+  }
+  &[data-callout="question"],
+  &[data-callout="example"] {
+    @include fill(warp);
+  }
+  &[data-callout="warning"] {
+    @include fill(sunny);
+  }
+  &[data-callout="failure"],
+  &[data-callout="danger"],
+  &[data-callout="bug"] {
+    @include fill(ember);
+  }
+  &[data-callout="quote"] {
+    @include fill(blossom);
+  }
+}
+
+// ── Right sidebar ───────────────────────────────────────────────────────────
+
+.graph > .graph-outer {
+  border: none;
+  border-radius: var(--r-lg);
+  background: var(--panel);
+}
+
+.toc ul.toc-content > li > a,
+.backlinks ul li > a {
+  font-family: var(--uiFont);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ink);
+  opacity: 0.55;
+  background: none;
+
+  &:hover {
+    opacity: 1;
+  }
+  &.in-view {
+    opacity: 1;
+  }
+}
+
+.backlinks ul li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  opacity: 1;
+  &::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--slate);
+  }
+}
+
+@each $st, $c in $status-char {
+  .backlinks ul li > a[data-status="#{$st}"]::before {
+    background: var(--#{$c});
+  }
+}
+
+// ── Popovers ────────────────────────────────────────────────────────────────
+
+.popover > .popover-inner {
+  border: 1.5px solid var(--rule);
+  border-radius: var(--r-lg);
+  box-shadow: none;
+  background: var(--light);
+}
+
+// ── Recently updated (home) ─────────────────────────────────────────────────
+// A tidy index: title in the serif, tags, then the date in slate.
+
+.recent-notes {
+  margin-top: 1rem;
+
+  & > h3 {
+    font-family: var(--uiFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    margin: 0 0 0.6rem;
+  }
+
+  & ul.recent-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & li.recent-li {
+    margin: 0;
+    border-bottom: 1px solid var(--rule);
+
+    & > .section {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.6rem 0;
+    }
+
+    & .desc h3 {
+      margin: 0;
+      font-family: var(--headerFont);
+      font-size: 1.2rem;
+      font-weight: 500;
+      & > a {
+        color: var(--dark);
+        background: none;
+        &:hover {
+          color: var(--accent-ink);
+        }
+      }
+    }
+
+    & .meta {
+      order: 3;
+      margin: 0;
+      font-family: var(--uiFont);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+      white-space: nowrap;
+    }
+
+    & ul.tags {
+      margin: 0;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media all and ($mobile) {
+  .recent-notes li.recent-li > .section {
+    grid-template-columns: 1fr auto;
+    & ul.tags {
+      grid-column: 1 / -1;
+      justify-content: flex-start;
+    }
+  }
+}
+
+// ── Folder & tag listings ───────────────────────────────────────────────────
+
+.page-listing {
+  & ul.section-ul > li.section-li {
+    border-bottom: 1px solid var(--rule);
+    padding: 0.6rem 0;
+    margin: 0;
+  }
+  & .section .meta {
+    font-family: var(--uiFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+  }
+  & .section .desc h3 > a {
+    font-family: var(--headerFont);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--dark);
+    background: none;
+    &:hover {
+      color: var(--accent-ink);
+    }
+  }
+}
+
+// ── Footnotes, footer ───────────────────────────────────────────────────────
+
+section.footnotes {
+  font-size: 1rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 1.15rem;
+    margin: 0 auto 1.4rem;
+    background: $dock center / contain no-repeat;
+  }
+
+  & p,
+  & ul li a {
+    font-family: var(--uiFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    background: none;
+  }
+  & ul {
+    justify-content: center;
+  }
+}
+
