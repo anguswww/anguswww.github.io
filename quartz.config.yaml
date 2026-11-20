@@ -86,7 +86,7 @@ plugins:
       wikilinks: true
       callouts: true
       mermaid: true
-      parseTags: true
+      parseTags: false
       parseBlockReferences: true
       enableYouTubeEmbed: true
       enableVideoEmbed: true
