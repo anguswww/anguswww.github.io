@@ -76,6 +76,10 @@ plugins:
         dark: github-dark
       keepBackground: false
     order: 20
+  # Undo Quartz Syncer's backslash escapes inside bare URLs (see plugins/unescape-urls)
+  - source: ./plugins/unescape-urls
+    enabled: true
+    order: 5
   - source: "@quartz-community/obsidian-flavored-markdown"
     enabled: true
     options:
