@@ -80,6 +80,10 @@ plugins:
   - source: ./plugins/unescape-urls
     enabled: true
     order: 5
+  # Inline #tags render as links but don't tag the page (see plugins/frontmatter-tags-only)
+  - source: ./plugins/frontmatter-tags-only
+    enabled: true
+    order: 35
   - source: "@quartz-community/obsidian-flavored-markdown"
     enabled: true
     options:
@@ -90,7 +94,7 @@ plugins:
       wikilinks: true
       callouts: true
       mermaid: true
-      parseTags: false
+      parseTags: true
       parseBlockReferences: true
       enableYouTubeEmbed: true
       enableVideoEmbed: true

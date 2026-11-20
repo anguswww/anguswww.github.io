@@ -33,8 +33,30 @@ function slugFromHref(href: string): string {
   return path
 }
 
+// Inline #tags link to /tags/<tag>, but tag pages only exist for tags some page
+// has in its frontmatter. Disable links to missing tag pages (styled as plain chips).
+function unlinkMissingTags(idx: Record<string, Entry>) {
+  const known = new Set<string>()
+  for (const entry of Object.values(idx)) {
+    for (const t of entry?.tags ?? []) {
+      const parts = t.toLowerCase().split("/")
+      for (let i = 1; i <= parts.length; i++) known.add(parts.slice(0, i).join("/"))
+    }
+  }
+  const links = document.querySelectorAll<HTMLAnchorElement>("article a.tag-link[data-slug^='tags/']")
+  for (const a of links) {
+    const tag = a.dataset.slug!.slice("tags/".length).toLowerCase()
+    if (tag === "" || tag === "index" || known.has(tag)) continue
+    // keep the <a> (and its href) so tag-chip styles still apply; CSS disables it
+    a.dataset.noPage = ""
+    a.tabIndex = -1
+    a.setAttribute("aria-disabled", "true")
+  }
+}
+
 async function mark() {
   const idx = await loadIndex()
+  unlinkMissingTags(idx)
   const links = document.querySelectorAll<HTMLAnchorElement>(
     ".explorer a[href], .backlinks a[href], .recent-notes a.internal:not(.tag-link)",
   )

@@ -638,6 +638,12 @@ a.internal.tag-link {
   }
 }
 
+// inline #tag with no tag page yet (oculus.inline.ts): show the chip, not a link
+a.internal.tag-link[data-no-page] {
+  pointer-events: none;
+  cursor: default;
+}
+
 // Status tags (#Outline → #Draft → #Semi-Polished → #Polished) lead the row
 // as a solid chip in the status colour, with a circle that fills as the page
 // matures.

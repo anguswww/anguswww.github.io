@@ -1,0 +1,20 @@
+{
+  "name": "frontmatter-tags-only",
+  "version": "1.0.0",
+  "description": "Keeps inline #tags rendered as tag links without adding them to the page's tags.",
+  "type": "module",
+  "license": "MIT",
+  "exports": { ".": { "import": "./dist/index.js" }, "./package.json": "./package.json" },
+  "main": "./dist/index.js",
+  "quartz": {
+    "name": "frontmatter-tags-only",
+    "displayName": "Frontmatter Tags Only",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 35,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}
