@@ -19,10 +19,10 @@ configuration:
     cdnCaching: true
     typography:
       title:
-        name: EB Garamond
+        name: Newsreader
         weights: [500, 600]
       header:
-        name: EB Garamond
+        name: Newsreader
         weights: [400, 500, 600]
         includeItalic: true
       body:
