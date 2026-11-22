@@ -476,7 +476,7 @@ h1.article-title {
     height: 0.72em;
     background: var(--accent);
     @include glyph-mask;
-    transform: translateY(0.03em);
+    transform: translateY(-0.1em); // centre on Newsreader cap height
   }
 }
 
