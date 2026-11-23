@@ -1154,12 +1154,34 @@ article blockquote.transclude {
   }
 }
 
-@media all and ($mobile) {
+// Narrow screens: title on its own line, tags and date sharing the line
+// below. (Half-screen windows have room for the one-line row.)
+@media all and (max-width: 600px) {
   .recent-notes li.recent-li > .section {
     grid-template-columns: 1fr auto;
-    & ul.tags {
+    row-gap: 0.35rem;
+    column-gap: 1rem;
+    & > .desc {
       grid-column: 1 / -1;
+    }
+    & ul.tags {
+      grid-column: 1;
+      grid-row: 2;
       justify-content: flex-start;
+    }
+    & .meta {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  // tables wrap their cells (long URLs included) rather than hiding columns
+  // behind a sideways scroll
+  article .table-container table {
+    & th,
+    & td,
+    & td * {
+      overflow-wrap: anywhere;
     }
   }
 }
@@ -1171,6 +1193,10 @@ article blockquote.transclude {
     border-bottom: 1px solid var(--rule);
     padding: 0.6rem 0;
     margin: 0;
+    // the page's own rule follows the list; don't draw two lines
+    &:last-child {
+      border-bottom: none;
+    }
   }
   & .section .meta {
     font-family: var(--uiFont);
@@ -1234,18 +1260,28 @@ footer {
 // and the panel stays at its fixed width.
 $measure: 43rem;
 
+// The column's side padding grows to centre the measure in it, so the text,
+// the rule under it, the graph/backlinks row and the footer all share edges.
+$column-pad: max(3rem, calc((100% - #{$measure}) / 2));
+
 @media all and not ($mobile) {
-  .page > #quartz-body .center > * {
-    max-width: $measure;
+  .page > #quartz-body .center,
+  .page > #quartz-body > footer {
+    padding-left: $column-pad;
+    padding-right: $column-pad;
+  }
+  .page > #quartz-body .center > hr {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
-// Tablet (1000–1400px): the graph/backlinks row below the text lines up with it.
+// Tablet (1000–1400px): the graph/backlinks row sits under the text.
 @media all and ($tablet) {
   .page > #quartz-body .sidebar.right {
     box-sizing: border-box;
-    padding-left: 3.5rem;
-    padding-right: 2.5rem;
+    padding-left: $column-pad;
+    padding-right: $column-pad;
   }
 }
 
@@ -1312,5 +1348,18 @@ $measure: 43rem;
     & svg {
       margin: 0;
     }
+  }
+}
+
+// The current page's tab grows concave fillets past its row; on the last row
+// they overflowed the list and gave the explorer a stray scrollbar.
+.explorer .explorer-ul {
+  padding-bottom: var(--r-md);
+}
+
+// Below desktop the graph/backlinks row needs air between it and the page above.
+@media all and not ($desktop) {
+  .page > #quartz-body .sidebar.right {
+    margin-top: 2.5rem;
   }
 }
