@@ -1,0 +1,87 @@
+{
+  "name": "site-footer",
+  "version": "1.1.1",
+  "description": "Fork of @quartz-community/footer: only the \"Created with Quartz\" line, no copyright year.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Quartz Community",
+  "homepage": "https://github.com/quartz-community/footer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quartz-community/footer"
+  },
+  "keywords": [
+    "quartz",
+    "quartz-plugin",
+    "footer",
+    "component"
+  ],
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "preact": {
+      "optional": false
+    }
+  },
+  "dependencies": {
+    "@quartz-community/types": "^1.0.0",
+    "@quartz-community/utils": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10.9.2"
+  },
+  "quartz": {
+    "name": "footer",
+    "displayName": "Footer",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 50,
+    "defaultEnabled": true,
+    "defaultOptions": {
+      "links": {
+        "GitHub": "https://github.com/jackyzha0/quartz",
+        "Discord Community": "https://discord.gg/cRFFHYye7t"
+      }
+    },
+    "components": {
+      "Footer": {
+        "displayName": "Footer",
+        "defaultPosition": "footer",
+        "defaultPriority": 50
+      }
+    },
+    "optionSchema": {
+      "links": {
+        "type": "object"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

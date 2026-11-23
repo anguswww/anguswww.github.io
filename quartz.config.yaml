@@ -238,12 +238,11 @@ plugins:
     layout:
       position: afterBody
       priority: 10
-  - source: "@quartz-community/footer"
+  # Footer fork: just the "Created with Quartz" line, no copyright year (see plugins/site-footer)
+  - source: ./plugins/site-footer
     enabled: true
     options:
-      links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+      links: {}
     layout:
       position: footer
       priority: 50
