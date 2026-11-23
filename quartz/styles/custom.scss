@@ -1294,7 +1294,7 @@ $column-pad: max(3rem, calc((100% - #{$measure}) / 2));
   }
 }
 
-// Phone: one header row — menu button, centred wordmark, compact tools. The
+// Phone: one header row — menu button, wordmark beside it, compact tools. The
 // row used to be wider than the screen, which pushed the whole page past the
 // right gutter and left the wordmark jammed against the menu button.
 @media all and ($mobile) {
@@ -1303,7 +1303,7 @@ $column-pad: max(3rem, calc((100% - #{$measure}) / 2));
 
     & .sidebar.left {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
       column-gap: 0.5rem;
       padding: 1rem 0;
@@ -1317,9 +1317,13 @@ $column-pad: max(3rem, calc((100% - #{$measure}) / 2));
       & > .page-title {
         grid-column: 2;
         grid-row: 1;
-        margin: 0;
+        justify-self: start;
+        margin: 0 0 0 0.5rem;
         font-size: clamp(1.1rem, 5vw, 1.4rem);
         white-space: nowrap;
+        // centre the caps themselves, not the line box (all-caps wordmark
+        // would otherwise sit high beside the icons)
+        text-box: trim-both cap alphabetic;
       }
       & > .mobile-only {
         display: none;
