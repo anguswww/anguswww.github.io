@@ -6,7 +6,7 @@ configuration:
   enablePopovers: true
   analytics: null
   locale: en-GB
-  baseUrl: anguswww.github.io/garden
+  baseUrl: anguswww.github.io
   ignorePatterns:
     - private
     - templates
