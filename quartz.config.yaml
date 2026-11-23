@@ -167,7 +167,8 @@ plugins:
     enabled: true
   - source: "@quartz-community/tag-page"
     enabled: true
-  - source: "@quartz-community/explorer"
+  # Explorer fork: hamburger menu up to 1000px, so half-screen windows get it (see plugins/site-explorer)
+  - source: ./plugins/site-explorer
     enabled: true
     layout:
       position: left
@@ -178,7 +179,8 @@ plugins:
     layout:
       position: right
       priority: 10
-  - source: "@quartz-community/search"
+  # Search fork: mobile layout up to 1000px to match (see plugins/site-search)
+  - source: ./plugins/site-search
     enabled: true
     layout:
       position: left
@@ -212,7 +214,8 @@ plugins:
     layout:
       position: left
       priority: 10
-  - source: "@quartz-community/darkmode"
+  # Darkmode fork: light by default, remembers the toggle (see plugins/site-darkmode)
+  - source: ./plugins/site-darkmode
     enabled: true
     layout:
       position: left

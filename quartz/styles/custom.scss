@@ -1226,3 +1226,91 @@ footer {
   }
 }
 
+
+// ── Responsive layout ───────────────────────────────────────────────────────
+
+// One reading measure everywhere, so the text column is the same width with
+// reader mode on or off (reader mode just fades the sidebars; nothing reflows)
+// and the panel stays at its fixed width.
+$measure: 43rem;
+
+@media all and not ($mobile) {
+  .page > #quartz-body .center > * {
+    max-width: $measure;
+  }
+}
+
+// Tablet (1000–1400px): the graph/backlinks row below the text lines up with it.
+@media all and ($tablet) {
+  .page > #quartz-body .sidebar.right {
+    box-sizing: border-box;
+    padding-left: 3.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+// Phone layout (up to 1000px, so half-screen windows too): cap the page at the
+// same measure and centre it, rather than running lines across the window.
+@media all and ($mobile) {
+  .page > #quartz-body {
+    box-sizing: border-box;
+    max-width: calc(#{$measure} + 2rem);
+  }
+}
+
+// Phone: one header row — menu button, centred wordmark, compact tools. The
+// row used to be wider than the screen, which pushed the whole page past the
+// right gutter and left the wordmark jammed against the menu button.
+@media all and ($mobile) {
+  .page > #quartz-body {
+    grid-template-columns: minmax(0, 1fr);
+
+    & .sidebar.left {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      column-gap: 0.5rem;
+      padding: 1rem 0;
+
+      & > .explorer {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        margin: 0;
+      }
+      & > .page-title {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0;
+        font-size: clamp(1.1rem, 5vw, 1.4rem);
+        white-space: nowrap;
+      }
+      & > .mobile-only {
+        display: none;
+      }
+      & > .flex-component {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        gap: 0.5rem !important;
+        & > div {
+          flex: none !important;
+        }
+      }
+    }
+  }
+
+  // search collapses to its icon
+  .sidebar .search > .search-button {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    justify-content: center;
+    & p {
+      display: none;
+    }
+    & svg {
+      margin: 0;
+    }
+  }
+}

@@ -8,12 +8,14 @@
  * assuming mobile < desktop
  */
 $breakpoints: (
-  mobile: 800px,
-  desktop: 1200px,
+  mobile: 1000px, // half-screen windows get the phone layout; local plugin forks match
+  desktop: 1400px, // three columns only once the text can reach its full measure
 );
 
 $mobile: "(max-width: #{map.get($breakpoints, mobile)})";
-$tablet: "(min-width: #{map.get($breakpoints, mobile)}) and (max-width: #{map.get($breakpoints, desktop)})";
+// exclusive at both ends: plugins treat <=mobile as mobile and >=desktop as desktop,
+// and an overlap made exactly those widths mix two layouts
+$tablet: "(min-width: #{map.get($breakpoints, mobile) + 0.02px}) and (max-width: #{map.get($breakpoints, desktop) - 0.02px})";
 $desktop: "(min-width: #{map.get($breakpoints, desktop)})";
 
 $pageWidth: #{map.get($breakpoints, mobile)};
