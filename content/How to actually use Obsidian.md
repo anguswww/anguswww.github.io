@@ -1,9 +1,9 @@
 ---
 publish: true
 created: 2026-11-19T11:39:46.762Z
-modified: 2026-11-24T04:46:13.390Z
+modified: 2026-11-24T04:48:45.867Z
 tags:
-  - "#Outline"
+  - "#Draft"
 ---
 
 [Obsidian](https://obsidian.md/) is an extremely powerful note taking application that allows you to hyperlink notes together. It is extremely customisable. This is great, since the app can be adapted to your very specific use case. It is also terrible, since new users are given basically zero direction. This leads to new users either abandoning the app, or using it in suboptimal ways carried over from other notes apps. Online tutorials don't really help either, as they are either (_in my experience_) over opinionated, and structured to fit the creators ideals, or under opinionated, and present options without much guidance.
