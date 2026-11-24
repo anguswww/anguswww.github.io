@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T11:39:46.762Z
-modified: 2026-11-24T05:09:16.960Z
+modified: 2026-11-24T07:36:45.779Z
 tags:
   - "#Draft"
 ---
@@ -95,41 +95,87 @@ Listed using `Cmd` for Mac, Windows/Linux equivalents should just be the same bu
 - `![[` - Embed a note or image.
 - `[[Note|text]]` Internal link that shows custom text.
 
----
-
-**Everything past here is WIP.**
-
 ## Improvements
 
-From most to least important for usability. I will make a vault template with all of these set as default.
+I will make a vault template with most of these set-up. I would still recommend skimming this to understand how everything works.
 
-### I don't want to manually a categories property for each note.
+### I don't want to manually add a categories property for each note.
 
-templater
+The [Templater](https://community.obsidian.md/plugins/templater-obsidian) plugin allows you to set a template for every new note.
 
-### My maps are just empty notes.
+1. Create a folder for your templates, and a default note with a categories property using the process from [[How to actually use Obsidian#Maps and Categories]]
 
-dataview. ai
+![[Attachments/Pasted image 20261124170840.png|277]]![[Attachments/Pasted image 20261124170746.png|242]]
 
-### Links don't update when I rename notes.
+I have a tags property included as well, which isn't required. You can change the template to work for you.
 
-setting toggle
+2. Install and enable the [Templater](https://community.obsidian.md/plugins/templater-obsidian) plugin.
+3. Set your template folder and turn on the 'Trigger Templater on new file creation' in the plugin settings
+   ![[Attachments/Pasted image 20261124171941.png]]
 
-### Attachments keep cluttering up my notes.
+![[Attachments/Pasted image 20261124170029.png]]
 
-setting toggle
+4. Under 'Folder templates,' add a rule for the / (root) directory and select your template.
+   ![[Attachments/Pasted image 20261124172108.png]]
+
+### My maps are just empty notes that don't display members of their category.
+
+#### Dataview
+
+The [Dataview](https://community.obsidian.md/plugins/dataview) plugin allows you to query your notes like a database. It is capable of lots of things, but for this use case we will just be using it to show notes that belong to a specific category.
+
+1. Install and enable the [Dataview](https://community.obsidian.md/plugins/dataview) plugin.
+2. Paste the following code block into your maps under a notes heading.
+
+```markdown
+| File                                                                          | Created  | Last Modified |
+| ----------------------------------------------------------------------------- | -------- | ------------- |
+| [[Meta; How to actually use Obsidian.md\|Meta; How to actually use Obsidian]] | 24/11/26 | 24/11/26      |
+
+```
+
+3. Your notes linking to the map should now be displayed ordered based on when they were last modified.
+
+![[Attachments/Pasted image 20261124175254.png]]
+
+You may want your notes displayed differently. I would recommend using an LLM to create custom queries that fit your needs, but you could also [learn dataview](https://blacksmithgu.github.io/obsidian-dataview/) and dataviewjs to make your own queries.
+
+#### Bases
+
+[Bases](https://obsidian.md/help/bases) are built into Obsidian and enabled by default. They have benefits and drawbacks compared to Dataview. They have better UI/UX than basic dataview components, but require a seperate .base file outside of your map.
+
+To display a base inside of your map note, you use the syntax `![[Map.base]]`
+
+![[Attachments/Pasted image 20261124175101.png]]
 
 ### I want a cloud backup of my notes that syncs to all my devices.
 
-obsidian sync, git.
+If you are tech savvy enough to know what Git is, I would recommend backing up your notes to a private GitHub repo using the [Git Sync](https://community.obsidian.md/plugins/git-obsi-sync) plugin. If you don't want to deal with version control, Obsidian sells an [Obsidian Sync](https://obsidian.md/sync) subscription for \$4/month.
+
+For syncing via Git to my iPhone I use [GitSync](https://apps.apple.com/us/app/gitsync/id6744980427).
 
 ### I want an easy way to have a daily journal.
 
-Daily Notes, calendar.
+Obsidian has a daily notes plugin built in. I keep my daily notes in a subfolder and the template does the same.
 
 ### I want the app to look better
 
-Themes
+There are many [themes](https://community.obsidian.md/search?type=theme) available for Obsidian. You can also change fonts in settings. I currently use the [Minimal](https://community.obsidian.md/themes/minimal) theme.
+
+### Attachments keep cluttering up my notes.
+
+You should create an attachments folder, then open Obsidian's settings and set attachments to go there.
+
+![[Attachments/Pasted image 20261124180915.png]]
+
+### Links don't update when I rename notes.
+
+When you first rename or move a note with links to it you will get this pop-up. You should click 'Always update.' This can be changed in settings if you have already clicked 'Do not update.'
+![[Attachments/Pasted image 20261124180634.png|505]]
+
+---
+
+**Everything past here is WIP.**
 
 ## Digital Gardening
 
