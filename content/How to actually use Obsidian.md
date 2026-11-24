@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T11:39:46.762Z
-modified: 2026-11-24T07:36:45.779Z
+modified: 2026-11-24T07:49:54.853Z
 tags:
   - "#Draft"
 ---
@@ -23,7 +23,7 @@ This post will assume you can download and install [Obsidian](https://obsidian.m
 1. [Internal Links](https://obsidian.md/help/links) to other notes are made using `[[note name]]`. This is a very important feature.
 2. [Properties](https://obsidian.md/help/properties#Property+format) can be added by entering `---` at the start of notes or by pressing `Cmd/Ctrl`+`;`. Also very important.
 
-## The Enemy: Folders
+## Trees vs Roots
 
 ### Folders
 
