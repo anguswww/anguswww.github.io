@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T11:39:46.762Z
-modified: 2026-11-24T04:48:45.867Z
+modified: 2026-11-24T05:09:16.960Z
 tags:
   - "#Draft"
 ---
@@ -15,7 +15,8 @@ I wrote this to fill the gap in tutorials, giving new users sensible defaults fo
 - You can link notes together across different topics and areas. This may be possible in other apps but it's very well supported in Obsidian.
 - Your notes are stored on your own device as readable text. If Obsidian disappeared tomorrow your notes would still be readable and safe. There are also ways to back up your notes to the cloud.
 - If you want to start a [[Digital Gardening|Digital Garden]], Obsidian is the best, most well supported way to do this.
-  This post will assume you can download and install [Obsidian](https://obsidian.md/download), and know basic [markdown syntax](https://www.markdownguide.org/cheat-sheet/). Markdown is fairly simple to understand, and there are good tutorials online.
+
+This post will assume you can download and install [Obsidian](https://obsidian.md/download), and know basic [markdown syntax](https://www.markdownguide.org/cheat-sheet/). Markdown is fairly simple to understand, and there are good tutorials online.
 
 ## Basics
 
@@ -102,7 +103,7 @@ Listed using `Cmd` for Mac, Windows/Linux equivalents should just be the same bu
 
 From most to least important for usability. I will make a vault template with all of these set as default.
 
-### I don't want to manually add properties and the categories field for each note.
+### I don't want to manually a categories property for each note.
 
 templater
 
