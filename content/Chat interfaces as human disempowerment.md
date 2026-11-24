@@ -1,30 +1,35 @@
 ---
 publish: true
 created: 2026-11-20T01:53:36.596Z
-modified: 2026-11-20T03:50:21.252Z
+modified: 2026-11-24T02:57:29.818Z
 tags:
   - Outline
 ---
 
 **Very WIP**
 
-https://gradual-disempowerment.ai/
+https://gradual-disempowerment.ai/ -- using disempowerment in the way this paper uses it. using term 'human disempowerment' since i don't think i will argue to the 'gradualness.'
+[[Gradual Disempowerment Notes]]
 
 ## Outline / notes / ideas
 
 - chat-box UX is an inherently disempowering paradigm. pushes people towards delegation instead of participation or action.
 - hegel's master-slave dialectic can clearly be applied to AI, especially gradual disempowerment. it probably hasn't been applied because of low rationalist-continental social crossover and general distrust of continental philosophy among STEM. surprised at how few people seem to have made this connection.
 - scope should be chat-box input not necessarily output. agent harnesses make text output instead of visuals a solvable issue, openai have a gen ui thing built in now.
--
 
 **prelim structure**
 
-1. attention grabbing intro of some kind??
-2. highlight issues with chat UX, make clear that this is at input not necessarily output.
+1. narrative version of hegel dialectic
+   1. "imagine you are the only person on earth. you have never seen another soul. suddenly you encounter another person."
+   2. ""
+2. This
+   **old structure (keeping for reference)**
+3. attention grabbing intro of some kind??
+4. highlight issues with chat UX, make clear that this is at input not necessarily output.
    1. no affordances. designed for the shape of LLM models not for humans
    2. at its core encourages delegation over active working. different to industrial and computer revolutions because the work involves structural decisions, not just route tasks.
-3. users (e.g. vibe-coders) are simultaneously empowered (can code with natural language) and disempowered (don't know how the code works). everyone is now a top level executive with subordinates. connect this with gradual disempowerment.
-4. non sequitur into hegel's master slave dialectic explanation.
+5. users (e.g. vibe-coders) are simultaneously empowered (can code with natural language) and disempowered (don't know how the code works). everyone is now a top level executive with subordinates. connect this with gradual disempowerment.
+6. non sequitur into hegel's master slave dialectic explanation.
 
 _Q. Should the hegel stuff and the UX stuff be seperate posts? Probably but it is more interesting and rhizomatic this way._
 
@@ -49,3 +54,4 @@ _Q. Should the hegel stuff and the UX stuff be seperate posts? Probably but it i
 
 - https://jordantimes.com/opinion/joschka-fischer/ai-master-or-slave - german foreign minister doing AI Hegel comparison.
 - https://link.springer.com/article/10.1007/s10676-015-9377-6 _"Responding to long-standing warnings that robots and AI will enslave humans, I argue that the main problem we face is not that automation might turn us into slaves but, rather, that we remain masters."_ - seems to be worth reading.
+- https://www.marxists.org/reference/archive/hegel/works/ph/phba.htm -- quick reference to relevant hegel passage. ignore the fact that it is marxist.

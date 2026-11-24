@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T08:12:27.158Z
-modified: 2026-11-20T02:37:21.158Z
+modified: 2026-11-24T04:47:38.961Z
 tags:
   - "#Draft"
 ---
@@ -49,9 +49,6 @@ Scale using tags: #Outline #Draft #Semi-Polished #Polished
 
 ## How would I make my own digital garden?
 
-1. Use [Obsidian](https://obsidian.md/). Even if you don't start a digital garden its the best personal note taking app available.
-2. Host your notes somewhere. I'm currently using [forestry.md](https://forestry.md/) but there's a high chance I switch to [Quartz](https://quartz.jzhao.xyz/) hosted on Github Pages sometime in the near future.
-3. Start writing and eventually publishing. Most setups probably need a flag set in the frontmatter to publish online and this is sensible. Learn how to use obsidian, probably base your vault on [this post](https://stephango.com/vault) by its creator. There are very few good resources on how to use Obsidian properly, lots of slop. I feel like I might have to write a guide. Main thing that 'unlocked' it for me was using a categories YAML property which contains links to root notes or 'Maps of Content.'
-   ![[Attachments/Pasted image 20261119214954.png|377]]
-
-- [ ] Write post on how to set up obsidian properly because the landscape is filled with slop 📅 2026-11-26
+1. Use [Obsidian](https://obsidian.md/). Even if you don't start a digital garden its the best personal note taking app available once it clicks. Most online tutorials didn't make it click for me, so I wrote [[How to actually use Obsidian]] to help people get over the learning curve.
+2. Start writing notes on topics of interest to you.
+3. Host your notes somewhere. I'm using [Quartz](https://quartz.jzhao.xyz/) hosted on Github Pages. [forestry.md](https://forestry.md/) has a simpler setup process if you're less tech savvy. I should end up writing a Quartz setup walkthrough at [[How to actually use Obsidian#Digital Gardening]].
