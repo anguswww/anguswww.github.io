@@ -55,6 +55,7 @@ configuration:
         textHighlight: "#ffb80055"
   links:
     markdownLinkResolution: shortest
+    openLinksInNewTab: true
   contentIndex:
     enableSiteMap: true
     enableRSS: true
@@ -80,6 +81,10 @@ plugins:
   - source: ./plugins/unescape-urls
     enabled: true
     order: 5
+  # End lists at the first unindented line, like Obsidian (see plugins/obsidian-list-breaks)
+  - source: ./plugins/obsidian-list-breaks
+    enabled: true
+    order: 6
   # Inline #tags render as links but don't tag the page (see plugins/frontmatter-tags-only)
   - source: ./plugins/frontmatter-tags-only
     enabled: true

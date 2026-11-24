@@ -583,8 +583,22 @@ article a.external {
   }
 }
 
+// Small "opens elsewhere" arrow after external links
 article a.external .external-icon {
-  display: none;
+  display: inline;
+  width: 0.5em;
+  height: 0.5em;
+  margin: 0 0 0 0.15em;
+  vertical-align: baseline;
+
+  > path {
+    fill: currentColor;
+    opacity: 0.45;
+  }
+}
+
+article a.external:hover .external-icon > path {
+  opacity: 1;
 }
 
 article :is(h1, h2, h3, h4, h5, h6) a.internal {

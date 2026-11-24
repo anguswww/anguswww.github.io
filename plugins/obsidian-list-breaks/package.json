@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-list-breaks",
+  "version": "1.0.0",
+  "description": "Ends a list at the first unindented line, like Obsidian, instead of folding it into the last item (CommonMark lazy continuation).",
+  "type": "module",
+  "license": "MIT",
+  "exports": { ".": { "import": "./dist/index.js" }, "./package.json": "./package.json" },
+  "main": "./dist/index.js",
+  "quartz": {
+    "name": "obsidian-list-breaks",
+    "displayName": "Obsidian list breaks",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 6,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}
