@@ -3,7 +3,7 @@ publish: true
 permalink: index
 title: Home
 created: 2026-11-20T04:01:29.816Z
-modified: 2026-11-20T05:10:25.695Z
+modified: 2026-11-24T04:50:53.353Z
 ---
 
 Hi! I'm Angus, currently a Computer Science student. I'm interested in modelling and shaping the future impacts of AI on society. I would probably describe myself as a [rationalist](https://en.wikipedia.org/wiki/Rationalist_community) or at least rationalist adjacent.
@@ -16,10 +16,8 @@ Tags are used to specify the current state of pages:
 
 ## Links
 
-| Email                | GitHub                      | Website                     |
-| -------------------- | --------------------------- | --------------------------- |
-| angus.wwww@gmail.com | https://github.com/anguswww | https://anguswww.github.io/ |
-
-Website probably won't really be used; this page sort of supplants it for now.
+| Email                | GitHub                      |
+| -------------------- | --------------------------- |
+| angus.wwww@gmail.com | https://github.com/anguswww |
 
 ## Index
