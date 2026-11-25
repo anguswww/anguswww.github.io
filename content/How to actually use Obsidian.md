@@ -99,12 +99,13 @@ Great, now I can see all of my notes related to philosophy. I don't like the way
 
 I'll install and enable the [Dataview](https://community.obsidian.md/plugins/dataview) plugin, and paste this code block into my maps under a `## Notes` heading.
 
-```markdown
-| File                                                                          | Created  | Last Modified |
-| ----------------------------------------------------------------------------- | -------- | ------------- |
-| [[Meta; How to actually use Obsidian.md\|Meta; How to actually use Obsidian]] | 24/11/26 | 24/11/26      |
-
+````markdown
+``` dataview
+table dateformat(file.ctime, "dd/MM/yy") as "Created", dateformat(file.mtime, "dd/MM/yy") as "Last Modified"
+where contains(categories, this.file.link)
+sort file.mtime DESC
 ```
+````
 
 ![[Attachments/Pasted image 20261124175254.png]]
 
