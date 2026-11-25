@@ -3,8 +3,8 @@ publish: true
 permalink: index
 title: Home
 created: 2026-11-20T04:01:29.816Z
-modified: 2026-11-24T04:50:53.353Z
-published: 2026-11-24T04:50:53.353Z
+modified: 2026-11-25T13:02:13.344Z
+published: 2026-11-25T13:02:13.344Z
 tags:
 categories:
 dg-home: true
@@ -17,7 +17,7 @@ This site is a [[Digital Gardening|Digital Garden]], filled with ideas, projects
 
 Tags are used to specify the current state of pages:
 
-#Outline -> #Draft -> #Semi-Polished -> #Polished
+#Outline → #Draft → #Semi-Polished → #Polished
 
 ## Links
 
