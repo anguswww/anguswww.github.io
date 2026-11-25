@@ -1,10 +1,10 @@
 ---
 publish: true
 created: 2026-11-25T00:21:27.242Z
-modified: 2026-11-25T09:36:06.178Z
-published: 2026-11-25T09:36:06.178Z
+modified: 2026-11-25T11:52:36.319Z
+published: 2026-11-25T11:52:36.319Z
 tags:
-  - "#Semi-Polished"
+  - Polished
 categories:
   - "[[UX Design]]"
   - "[[Projects]]"

@@ -1,15 +1,29 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-25T10:38:28.015Z
-published: 2026-11-25T10:38:28.015Z
+modified: 2026-11-25T11:52:04.080Z
+published: 2026-11-25T11:52:04.080Z
 tags:
   - Outline
 categories:
 dg-publish: true
 ---
 
-Log of changes to my Quartz setup for this site.
+## Features
+
+- Uses Quartz Syncer in my Obsidian vault
+  - Only notes with publish flags are published.
+- Custom theming with a unified design system
+  - Notes at different stages are given different colours and symbols
+
+## Structure
+
+## Things to add/change
+
+- Organise the sidebar
+- Fix weird issues with clicking folder name vs clicking arrow
+
+## Changelog
 
 | Date       | Changes                                                 |
 | ---------- | ------------------------------------------------------- |
@@ -19,35 +33,4 @@ Log of changes to my Quartz setup for this site.
 
 ## testing area
 
-i also use this note to test functionality
-
-```base
-formulas:
-  Untitled: ""
-properties:
-  file.name:
-    displayName: Name
-  file.ctime:
-    displayName: Created Time
-views:
-  - type: table
-    name: View
-    order:
-      - file.name
-      - file.ctime
-    sort:
-      - property: file.ctime
-        direction: DESC
-      - property: formula.Untitled
-        direction: ASC
-    columnSize:
-      file.name: 504
-  - type: list
-    name: View 2
-    filters:
-      and:
-        - file.tags.contains("Outline")
-    markers: bullet
-    indentProperties: false
-
-```
+i also use this note to test functionality without disturbing other notes.
