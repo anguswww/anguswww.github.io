@@ -680,55 +680,12 @@ a.internal.tag-link[data-no-page] {
   cursor: default;
 }
 
-// A note's categories (plugins/category-links): the maps it belongs to, as a
-// quiet row at the top of the body. Each is the map's violet rounded square and
-// its name; an unpublished map stays slate and unlinked-looking.
-article nav.note-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1.1rem;
-  margin: 0 0 1.4rem;
-  font-family: var(--uiFont);
-  font-size: 0.85rem;
-  line-height: 1.5;
-
-  // a.internal: outrank the body-link underline (article a.internal:not(…))
-  & > a.internal {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    color: var(--warp-ink);
-    font-weight: 500;
-    text-decoration: none;
-
-    &::before {
-      content: "";
-      flex: none;
-      width: 0.62rem;
-      height: 0.62rem;
-      border-radius: 0.16rem;
-      background: var(--warp);
-    }
-    &:hover {
-      background: none;
-      color: var(--dark);
-    }
-    &.missing {
-      color: var(--slate);
-      pointer-events: none;
-      &::before {
-        background: none;
-        box-shadow: inset 0 0 0 1.5px var(--slate);
-      }
-    }
-  }
-}
-
-// #MOC leads the row as a solid violet chip with its rounded square.
-ul.tags li:has(> a.tag-link[href$="/moc" i]) {
-  order: -2;
-}
-a.internal.tag-link[href$="/moc" i] {
+// Maps are violet rounded squares wherever they appear (see the explorer and
+// graph). In the tag row that means one chip, solid violet with a white square:
+// the #MOC tag on a map, and on any note the maps it belongs to (its
+// `categories`, from plugins/category-links, moved into this row by
+// oculus.inline.ts). Order: #MOC, status, categories, then topic tags.
+@mixin map-chip {
   gap: 0.42rem;
   background: var(--warp);
   color: var(--on-warp);
@@ -745,6 +702,83 @@ a.internal.tag-link[href$="/moc" i] {
   &:hover {
     background: var(--warp-ink);
     color: var(--on-warp);
+  }
+}
+
+ul.tags li:has(> a.tag-link[href$="/moc" i]) {
+  order: -2;
+}
+a.internal.tag-link[href$="/moc" i],
+ul.tags a.internal.category-chip {
+  @include map-chip;
+}
+
+// Category chips sit with the status chip, ahead of topic tags.
+ul.tags li:has(> a.category-chip) {
+  order: -1;
+}
+ul.tags a.internal.category-chip {
+  // a map that isn't published: scaffolding (slate on panel), hollow square
+  &.missing {
+    background: var(--panel);
+    color: var(--slate);
+    pointer-events: none;
+    &::before {
+      background: none;
+      box-shadow: inset 0 0 0 1.5px currentColor;
+    }
+  }
+}
+
+// Until the script moves them into the tag row (one frame), keep the
+// categories out of the body so the text doesn't jump.
+article nav.note-categories {
+  display: none;
+}
+
+// Categories that are ordinary notes, not maps (e.g. Digital Gardening on How
+// to actually use Obsidian): a quieter row under the chips. Notes are circles
+// in their status colour, as in the explorer and backlinks; slate without one.
+ul.tags:has(+ nav.note-related) {
+  margin-bottom: 0.75rem;
+}
+.page-header nav.note-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.1rem;
+  margin: 0 0 1.9rem;
+  font-family: var(--uiFont);
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  & > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--ink);
+    background: none;
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      flex: none;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: var(--dot, var(--slate));
+    }
+    &:hover {
+      color: var(--dark);
+      text-decoration: underline;
+      text-decoration-color: var(--dot, var(--slate));
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.18em;
+    }
+  }
+  @each $st, $c in $status-char {
+    & > a[data-status="#{$st}"] {
+      --dot: var(--#{$c});
+    }
   }
 }
 

@@ -75,6 +75,55 @@ async function mark() {
   }
 }
 
+// plugins/category-links renders a note's categories at the top of the body
+// (a transformer can't reach the header). Move them into the header:
+//  - categories that are maps (or unpublished, so unknown) become violet chips
+//    in the tag row, next to the status chip;
+//  - categories that are ordinary notes go in a row underneath, each with its
+//    status circle, the way notes appear in the explorer and backlinks.
+// CSS hides the body copy until then.
+async function moveCategories() {
+  const nav = document.querySelector<HTMLElement>("article nav.note-categories")
+  const header = document.querySelector<HTMLElement>(".page-header")
+  if (!nav || !header) return
+  const idx = await loadIndex()
+  // the page may have changed while the index loaded
+  if (!nav.isConnected) return
+
+  let chips = header.querySelector<HTMLUListElement>("ul.tags")
+  let notes: HTMLElement | null = null
+  for (const a of Array.from(nav.querySelectorAll<HTMLAnchorElement>("a"))) {
+    const slug = a.dataset.slug ?? ""
+    const entry = idx[slug]
+    const status = entry ? statusOf(entry, slug) : "map"
+    if (status === "map") {
+      if (!chips) {
+        chips = document.createElement("ul")
+        chips.className = "tags"
+        header.appendChild(chips)
+      }
+      a.classList.add("tag-link", "category-chip")
+      const li = document.createElement("li")
+      li.appendChild(a)
+      chips.appendChild(li)
+    } else {
+      if (!notes) {
+        notes = document.createElement("nav")
+        notes.className = "note-related"
+        notes.setAttribute("aria-label", "Related notes")
+      }
+      if (status) a.dataset.status = status
+      notes.appendChild(a)
+    }
+  }
+  // directly under the tag row, so the two rows read as one block
+  if (notes) {
+    if (chips) chips.after(notes)
+    else header.appendChild(notes)
+  }
+  nav.remove()
+}
+
 let scheduled = false
 function schedule() {
   if (scheduled) return
@@ -90,6 +139,7 @@ const observer = new MutationObserver(schedule)
 
 document.addEventListener("nav", () => {
   observer.disconnect()
+  void moveCategories()
   observer.observe(document.body, { childList: true, subtree: true })
   schedule()
 })
