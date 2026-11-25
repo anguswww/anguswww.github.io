@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T11:39:46.762Z
-modified: 2026-11-24T07:49:54.853Z
+modified: 2026-11-24T07:51:44.235Z
 tags:
   - "#Draft"
 ---
@@ -23,9 +23,7 @@ This post will assume you can download and install [Obsidian](https://obsidian.m
 1. [Internal Links](https://obsidian.md/help/links) to other notes are made using `[[note name]]`. This is a very important feature.
 2. [Properties](https://obsidian.md/help/properties#Property+format) can be added by entering `---` at the start of notes or by pressing `Cmd/Ctrl`+`;`. Also very important.
 
-## Trees vs Roots
-
-### Folders
+## Folders
 
 Folders should be mostly avoided, and the desire to organise each note into a corresponding topic folder should be avoided completely. This will seem scary and disorganised at first, but I can justify why this approach is better.
 

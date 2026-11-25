@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T08:12:27.158Z
-modified: 2026-11-24T04:54:30.926Z
+modified: 2026-11-25T01:38:30.480Z
 tags:
   - "#Draft"
 ---
@@ -12,17 +12,20 @@ A digital garden (or at least my digital garden) is a place that sits below a fu
 
 ## Why digital gardening?
 
+With a more traditional blog, the expectation is for each post to be a fully grown, and stand on its own like an impressive, large pine tree. A digital garden can still have these large trees, but can also have small saplings, knotted rhizomes that create more than the sum of their parts, and a few weeds that haven't been cleared yet.
+
+Personally, I tend to have 3-4 side projects going at once in various states of completion. Digital gardening allows me to put these out there even if they don't end up fully formed.
+
 For me:
 
 - I have lots of side-projects that don't end up coalescing into a finished product. Digital gardening allows this in-progress work to be put somewhere so this doesn't feel like wasted effort.
 - Publishing notes here feels less 'official' than a blog or substack, and the expectation is for them to be unfinished.
 - Putting out half finished ideas acts as a soft accountability mechanism pushing me to finish them.
 - Most of my research is already in obsidian and publishing is made easy.
-- Can switch to hosting on GitHub pages semi-easily if limits on forestry.md are annoying.
 
 ## Virtues
 
-These are the guiding principles and virtues I strive for within my digital garden.
+These are some guiding principles and virtues I strive for within my digital garden.
 
 ### Imperfect action over inaction
 
