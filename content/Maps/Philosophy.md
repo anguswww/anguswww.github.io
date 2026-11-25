@@ -2,8 +2,11 @@
 publish: true
 created: 2026-11-24T02:57:12.679Z
 modified: 2026-11-25T10:25:36.908Z
+published: 2026-11-25T10:25:36.908Z
 tags:
   - MOC
+categories:
+dg-publish: true
 ---
 
 ## Notes

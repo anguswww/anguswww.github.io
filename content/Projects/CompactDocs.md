@@ -2,8 +2,13 @@
 publish: true
 created: 2026-11-25T00:21:27.242Z
 modified: 2026-11-25T09:36:06.178Z
+published: 2026-11-25T09:36:06.178Z
 tags:
   - "#Semi-Polished"
+categories:
+  - "[[UX Design]]"
+  - "[[Projects]]"
+dg-publish: true
 ---
 
 ![[Attachments/marquee-promo.png]]

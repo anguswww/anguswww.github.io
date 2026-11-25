@@ -2,8 +2,11 @@
 publish: true
 created: 2026-11-19T08:12:27.158Z
 modified: 2026-11-25T05:39:20.351Z
+published: 2026-11-25T05:39:20.351Z
 tags:
   - "#Draft"
+categories:
+dg-publish: true
 ---
 
 ## What is a digital garden?

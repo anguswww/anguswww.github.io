@@ -2,8 +2,11 @@
 publish: true
 created: 2026-11-25T09:07:52.674Z
 modified: 2026-11-25T09:29:36.224Z
+published: 2026-11-25T09:29:36.224Z
 tags:
   - Outline
+categories:
+dg-publish: true
 ---
 
 Log of changes to my Quartz setup for this site.

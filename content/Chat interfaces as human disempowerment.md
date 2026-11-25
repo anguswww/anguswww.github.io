@@ -2,8 +2,14 @@
 publish: true
 created: 2026-11-20T01:53:36.596Z
 modified: 2026-11-25T10:08:55.572Z
+published: 2026-11-25T10:08:55.572Z
 tags:
   - Outline
+categories:
+  - "[[AI Research|AI]]"
+  - "[[UX Design]]"
+  - "[[Philosophy]]"
+dg-publish: true
 ---
 
 **Very WIP**

@@ -2,8 +2,13 @@
 publish: true
 created: 2026-11-25T08:49:48.349Z
 modified: 2026-11-25T09:50:40.864Z
+published: 2026-11-25T09:50:40.864Z
 tags:
   - Semi-Polished
+categories:
+  - "[[UX Design]]"
+  - "[[Digital Gardening]]"
+dg-publish: true
 ---
 
 ## tl;dr
