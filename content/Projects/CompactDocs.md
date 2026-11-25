@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-25T00:21:27.242Z
-modified: 2026-11-25T02:57:40.635Z
+modified: 2026-11-25T06:33:33.786Z
 tags:
   - "#Semi-Polished"
 ---
@@ -10,7 +10,7 @@ tags:
 
 [Chrome Web Store](https://chromewebstore.google.com/detail/compactdocs/lilnjbpiikjfknobepdnlepjgalgdcfi) ・[Website](https://anguswww.github.io/compactdocs-chrome-extension/)・[GitHub](https://github.com/anguswww/compactdocs-chrome-extension)
 
-This is a Chrome Extension I made to remove useless whitespace from Google Docs. It was partially born out of frustration, since this should really be a settings toggle in Google Docs.
+This is a Chrome Extension that removes useless whitespace from Google Docs. It was partially born out of frustration. This should really be a settings toggle in Google Docs.
 
 ## What issue does it solve?
 

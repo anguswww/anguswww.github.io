@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T08:12:27.158Z
-modified: 2026-11-25T03:08:45.084Z
+modified: 2026-11-25T05:39:20.351Z
 tags:
   - "#Draft"
 ---
@@ -45,6 +45,6 @@ Scale using tags: #Outline #Draft #Semi-Polished #Polished
 
 ## How can I make my own digital garden?
 
-1. Use [Obsidian](https://obsidian.md/). Even if you don't start a digital garden its the best personal note taking app available once it clicks. Most online tutorials didn't make it click for me, so I wrote [[How to actually use Obsidian]] to help people get over the learning curve.
-2. Start writing notes on topics of interest to you. Don't worry about writing private notes, you will have control over which notes are and aren't public.
-3. Host your notes somewhere. I'm using [Quartz](https://quartz.jzhao.xyz/) hosted on Github Pages with the [Quartz Syncer](https://community.obsidian.md/plugins/quartz-syncer) plugin. [forestry.md](https://forestry.md/) has a simpler setup process if you're less tech savvy. I should end up writing a Quartz setup walkthrough at [[How to actually use Obsidian#Digital Gardening]].
+Use [Obsidian](https://obsidian.md/) to write your content. I wrote [[How to actually use Obsidian]] to help people use it in an optimal way.
+
+![[How to actually use Obsidian#Digital Gardening]]
