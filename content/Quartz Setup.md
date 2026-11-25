@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-25T10:37:14.076Z
-published: 2026-11-25T10:37:14.076Z
+modified: 2026-11-25T10:38:28.015Z
+published: 2026-11-25T10:38:28.015Z
 tags:
   - Outline
 categories:
@@ -11,10 +11,9 @@ dg-publish: true
 
 Log of changes to my Quartz setup for this site.
 
-| Date       | Changes                                                    |
-| ---------- | --------------------------------------------------------- |
-| 2026-11-25 Fixed dot points being misaligned with text<br>Added Maps s  |
-|                                                                         |
+| Date       | Changes                                                 |
+| ---------- | ------------------------------------------------------- |
+| 2026-11-25 | Fixed dot points being misaligned with text; Added Maps |
 
 ---
 
