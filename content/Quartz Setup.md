@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-25T09:20:47.220Z
+modified: 2026-11-25T09:22:34.076Z
 tags:
   - Outline
 ---
@@ -35,7 +35,7 @@ views:
     name: View 2
     filters:
       and:
-        - note["dg-publish"] == true
+        - file.tags.contains("Outline")
     markers: bullet
     indentProperties: false
 
