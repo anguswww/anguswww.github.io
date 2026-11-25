@@ -378,16 +378,18 @@ section.footnotes > h2 {
     opacity: 1;
     letter-spacing: -0.005em;
 
-    // a page with no status is an empty slate ring; status fills it
+    // every row shows its page's character, in its status colour (slate
+    // with no status). --glyph is reset per row so the current page's glyph
+    // (set on body) doesn't leak into the others.
+    --glyph: #{map.get($glyphs, open)};
     &::before {
       content: "";
       flex: none;
-      box-sizing: border-box;
-      width: 0.7rem;
-      height: 0.7rem;
-      border-radius: 50%;
-      background: var(--dot, transparent);
-      box-shadow: inset 0 0 0 1.5px var(--dot, var(--slate));
+      width: 1rem;
+      height: 1rem;
+      margin: -0.15rem;
+      background: var(--dot, var(--slate));
+      @include glyph-mask;
     }
 
     &:hover {
@@ -403,17 +405,6 @@ section.footnotes > h2 {
       color: var(--dark);
       font-weight: 600;
       border-radius: var(--r-md) 0 0 var(--r-md);
-
-      // the dot becomes the page's character
-      &::before {
-        width: 1rem;
-        height: 1rem;
-        margin: -0.15rem;
-        border-radius: 0;
-        box-shadow: none;
-        background: var(--accent);
-        @include glyph-mask;
-      }
 
       // concave fillets where the tab meets the panel above and below
       &::after {
@@ -435,23 +426,19 @@ section.footnotes > h2 {
     & .explorer-content ul li > a.active {
       font-weight: 600;
       color: var(--dark);
-      &::before {
-        background: var(--accent);
-      }
     }
   }
 
-  // each row's dot is its page's status (data-status set by oculus.inline.ts)
+  // each row's glyph and colour come from its page's status (data-status set by oculus.inline.ts)
   @each $st, $c in $status-char {
-    & a[data-status="#{$st}"] {
+    & .explorer-content ul li > a[data-status="#{$st}"] {
       --dot: var(--#{$c});
+      --glyph: #{map.get($glyphs, $c)};
     }
   }
   & .explorer-content ul li > a[data-status="map"] {
     --dot: var(--warp);
-    &::before {
-      border-radius: 0.2rem;
-    }
+    --glyph: #{map.get($glyphs, map)};
   }
 
   & .folder-container {
