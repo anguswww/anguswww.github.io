@@ -1,14 +1,16 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-25T09:22:34.076Z
+modified: 2026-11-25T09:26:21.085Z
 tags:
   - Outline
 ---
 
 Log of changes to my Quartz setup for this site.
 
-- 2026-11-25
+| Date       | Changes                                     |
+| ---------- | ------------------------------------------- |
+| 2026-11-25 | Fixed dot points being misaligned with text |
 
 ---
 
@@ -22,15 +24,14 @@ formulas:
 views:
   - type: table
     name: View
-    filters:
-      and:
-        - note["dg-publish"] == true
     order:
       - file.name
       - file.ctime
     sort:
       - property: formula.Untitled
         direction: ASC
+    columnSize:
+      file.name: 549
   - type: list
     name: View 2
     filters:
