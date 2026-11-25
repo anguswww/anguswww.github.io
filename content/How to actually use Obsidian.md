@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T08:49:48.349Z
-modified: 2026-11-25T10:30:00.390Z
-published: 2026-11-25T10:30:00.390Z
+modified: 2026-11-25T12:47:25.731Z
+published: 2026-11-25T12:47:25.731Z
 tags:
   - Semi-Polished
 categories:
@@ -195,8 +195,8 @@ If tags work for you then that's great, and I won't try and convince you to swit
 
 #### Why not use Bases instead of Dataview for maps?
 
-[Bases](https://obsidian.md/help/bases) seem better than I assumed. They have better UI/UX than basic dataview components.
+[Bases](https://obsidian.md/help/bases) seem better than I assumed. They have better UI/UX than basic Dataview components.
 
-I initially wrote them off, since I assumed you needed a separate .base file, but you can actually embed them in text. I'm keeping everything in this tutorial as dataview for now, but I could easily be converted into a Bases evangelist.
+I initially wrote them off, since I assumed you needed a separate .base file, but you can actually embed them in text. I'm keeping everything in this tutorial as Dataview for now, but I could easily be converted into a Bases evangelist.
 
 ![[Attachments/Pasted image 20261124175101.png]]
