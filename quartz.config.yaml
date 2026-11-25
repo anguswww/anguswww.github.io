@@ -85,6 +85,10 @@ plugins:
   - source: ./plugins/obsidian-list-breaks
     enabled: true
     order: 6
+  # "Showing 3 of 3 entries" above bases views → "3 entries" (see plugins/bases-count)
+  - source: ./plugins/bases-count
+    enabled: true
+    order: 60
   # A note's `categories` as a row of map links at the top (see plugins/category-links)
   - source: ./plugins/category-links
     enabled: true

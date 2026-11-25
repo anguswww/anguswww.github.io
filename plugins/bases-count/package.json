@@ -1,0 +1,20 @@
+{
+  "name": "bases-count",
+  "version": "1.0.0",
+  "description": "Shortens the bases-page view count from \"Showing N of N entries\" to \"N entries\".",
+  "type": "module",
+  "license": "MIT",
+  "exports": { ".": { "import": "./dist/index.js" }, "./package.json": "./package.json" },
+  "main": "./dist/index.js",
+  "quartz": {
+    "name": "bases-count",
+    "displayName": "Bases Count",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.1.0",
+    "dependencies": [],
+    "defaultOrder": 60,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}
