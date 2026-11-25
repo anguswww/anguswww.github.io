@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-19T08:12:27.158Z
-modified: 2026-11-25T03:01:14.716Z
+modified: 2026-11-25T03:08:45.084Z
 tags:
   - "#Draft"
 ---
@@ -29,7 +29,7 @@ Analysis paralysis is something to avoid as much as possible. The "move fast and
 Ideas should be linked (preferably hyperlinked) together to create a knotted structure. Notes across disparate disciplines should be connected to create new concepts.
 
 https://en.wikipedia.org/wiki/Rhizome\_(philosophy)
-The term rhizomatic refers to _rhizomes,_ a type of plant with no definite center.![[Attachments/rhizome.jpg]]
+The term rhizomatic refers to _rhizomes,_ a type of plant with no definite center. I'm using the term in roughly the same sense as the philosophers Deleuze and Guattari use it.![[Attachments/rhizome.jpg]]
 
 ### Terseness and density in near-finished works
 
