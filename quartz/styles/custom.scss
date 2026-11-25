@@ -39,7 +39,7 @@ $dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
 //     #polished → open (sky)     settled: the default voice
 //  Pages without a status fall back to slate. Violet and pink stay off the
 //  status scale and are used only for example/question and quote callouts,
-//  and violet also marks maps of content (#MOC notes, and Home), which are
+//  and violet also marks maps of content (#map notes, and Home), which are
 //  drawn as rounded squares, not circles: they hold other notes.
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -135,7 +135,7 @@ $status-char: (
     --accent-ink: var(--#{$c}-ink);
   }
 }
-body:has(.page-header ul.tags a.tag-link[href$="/moc" i]),
+body:has(.page-header ul.tags a.tag-link[href$="/map" i]),
 body[data-slug="index"] {
   @include map-page;
 }
@@ -682,9 +682,9 @@ a.internal.tag-link[data-no-page] {
 
 // Maps are violet rounded squares wherever they appear (see the explorer and
 // graph). In the tag row that means one chip, solid violet with a white square:
-// the #MOC tag on a map, and on any note the maps it belongs to (its
+// the #map tag on a map, and on any note the maps it belongs to (its
 // `categories`, from plugins/category-links, moved into this row by
-// oculus.inline.ts). Order: #MOC, status, categories, then topic tags.
+// oculus.inline.ts). Order: #map, status, categories, then topic tags.
 @mixin map-chip {
   gap: 0.42rem;
   background: var(--warp);
@@ -705,10 +705,10 @@ a.internal.tag-link[data-no-page] {
   }
 }
 
-ul.tags li:has(> a.tag-link[href$="/moc" i]) {
+ul.tags li:has(> a.tag-link[href$="/map" i]) {
   order: -2;
 }
-a.internal.tag-link[href$="/moc" i],
+a.internal.tag-link[href$="/map" i],
 ul.tags a.internal.category-chip {
   @include map-chip;
 }
