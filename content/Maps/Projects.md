@@ -1,15 +1,15 @@
 ---
 publish: true
 created: 2026-09-21T23:15:06.530Z
-modified: 2026-11-25T10:25:36.907Z
-published: 2026-11-25T10:25:36.907Z
+modified: 2026-11-25T10:29:17.784Z
+published: 2026-11-25T10:29:17.784Z
 tags:
   - MOC
 categories:
 dg-publish: true
 ---
 
-Map of content for projects.
+## Notes
 
 ```base
 formulas:
