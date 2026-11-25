@@ -711,6 +711,8 @@ article ul:not(.overflow):not(.tags):not(.section-ul) {
       position: absolute;
       left: -1.2rem;
       top: 0.58em;
+      // Centre on the first line's x-height, whatever the line-height.
+      top: calc(0.5lh - 0.25rem + 0.03em);
       width: 0.5rem;
       height: 0.5rem;
       border-radius: 50%;
