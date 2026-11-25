@@ -85,6 +85,10 @@ plugins:
   - source: ./plugins/obsidian-list-breaks
     enabled: true
     order: 6
+  # A note's `categories` as a row of map links at the top (see plugins/category-links)
+  - source: ./plugins/category-links
+    enabled: true
+    order: 55
   # Inline #tags render as links but don't tag the page (see plugins/frontmatter-tags-only)
   - source: ./plugins/frontmatter-tags-only
     enabled: true

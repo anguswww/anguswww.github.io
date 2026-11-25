@@ -1,6 +1,8 @@
 // Oculus theme: mark internal links with the status of the page they point to,
 // so CSS can colour them by status (#outline → #draft → #semi-polished → #polished).
 // Links get `data-status="<status>"`. Pages without a status tag get nothing.
+// Maps of content (#MOC notes, and Home) are not on the status scale; they get
+// `data-status="map"`, which wins over any status tag.
 // The explorer renders asynchronously, so links are re-marked whenever the DOM changes.
 
 declare const fetchData: Promise<Record<string, unknown>>
@@ -18,8 +20,9 @@ async function loadIndex(): Promise<Record<string, Entry>> {
   return index
 }
 
-function statusOf(entry: Entry | undefined): string | undefined {
+function statusOf(entry: Entry | undefined, slug: string): string | undefined {
   const tags = (entry?.tags ?? []).map((t) => t.toLowerCase())
+  if (slug === "index" || tags.includes("moc")) return "map"
   return STATUSES.find((s) => tags.includes(s))
 }
 
@@ -62,7 +65,8 @@ async function mark() {
   )
   for (const a of links) {
     if (a.getAttribute("href")?.startsWith("#")) continue
-    const status = statusOf(idx[slugFromHref(a.href)])
+    const slug = slugFromHref(a.href)
+    const status = statusOf(idx[slug], slug)
     if (status) {
       if (a.dataset.status !== status) a.dataset.status = status
     } else if (a.dataset.status) {

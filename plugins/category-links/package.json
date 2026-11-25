@@ -1,0 +1,20 @@
+{
+  "name": "category-links",
+  "version": "1.0.0",
+  "description": "Shows a note's `categories` (links to map notes) as a row at the top of the note.",
+  "type": "module",
+  "license": "MIT",
+  "exports": { ".": { "import": "./dist/index.js" }, "./package.json": "./package.json" },
+  "main": "./dist/index.js",
+  "quartz": {
+    "name": "category-links",
+    "displayName": "Category Links",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.1.0",
+    "dependencies": [],
+    "defaultOrder": 55,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}
