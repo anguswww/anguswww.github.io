@@ -1,15 +1,15 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-25T13:01:05.607Z
-published: 2026-11-25T13:01:05.607Z
+modified: 2026-11-25T14:46:48.499Z
+published: 2026-11-25T14:46:48.499Z
 tags:
   - Outline
 categories:
 dg-publish: true
 ---
 
-This note is for information on my Quartz setup for this site along with prospective changes.
+This note stores information on my Quartz setup for this site along with prospective changes.
 
 ## Features
 
@@ -26,9 +26,17 @@ This note is for information on my Quartz setup for this site along with prospec
 ## Structure
 
 - Follows my Obsidian vault, roughly the same as in [[Digital Gardening]]
-- maybe projects shouldn't be in a separate folder?
+- Notes are on a scale from outline -> draft -> semi-polished -> polished
+  - outline - dot points that probably don't make sense to anyone other than myself
+  - draft - notes with minimally edited paragraphs
+  - semi-polished - notes that are mostly readable, but not fully completed
+  - polished - notes that are essentially complete. no real edits to be made.
+  - unsure if these are the ideal categories or words to use. e.g. is a reading log a draft? or an outline? maybe there is a place for uncategorised notes in this system.
+- maybe projects shouldn't be in a separate folder? there should be a projects map that highlights the main projects. the highlights could be embedded in the index on the homepage
 
 ## Things to add/change
+
+### To-do
 
 - [ ] Organise the sidebar
 - [ ] Fix weird issues with sidebar: clicking folder name vs clicking arrow
@@ -43,7 +51,18 @@ This note is for information on my Quartz setup for this site along with prospec
 - [ ] hovered notes show the current note colours and icon
 - [ ] map note bases need polishing
 
-After all of this is done, probably take a break from editing configuration. Massive time sink.
+After all of this is done, probably take a break from editing configuration. Massive time sink. probably better to collect a list of issues and then delegate them to claude each week instead of constantly tweaking things.
+
+- [ ] fill in index on homepage when there are enough notes
+
+### Possible changes
+
+list of ideas that i'm not fully committed to.
+
+- change ordering or design of symbols to be less arbitrary
+- reading log for books/articles
+- idea log for ideas that don't have their own notes? unsure about this, seems downstream of sidebar issue
+- maybe no sidebar?
 
 ## Changelog
 
@@ -56,3 +75,8 @@ After all of this is done, probably take a break from editing configuration. Mas
 ## testing area
 
 i also use this note to test functionality without disturbing other notes.
+
+Obsidian supports Markdown footnotes for citations and side notes[^1].
+This point needs quick context^\[A brief note right where you write.].
+
+[^1]: Author, A. (2025). _Title of Work_. Publisher.
