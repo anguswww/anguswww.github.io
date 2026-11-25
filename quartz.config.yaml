@@ -185,6 +185,11 @@ plugins:
   # Oculus fork: nodes coloured by status tag (see plugins/oculus-graph/README.md)
   - source: ./plugins/oculus-graph
     enabled: true
+    options:
+      localGraph:
+        showTags: false
+      globalGraph:
+        showTags: false
     layout:
       position: right
       priority: 10
