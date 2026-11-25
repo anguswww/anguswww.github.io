@@ -2,11 +2,11 @@
 publish: true
 aliases:
   - AI
-created: 2026-09-30T03:56:04.507Z
-modified: 2026-11-25T10:47:00.265Z
-published: 2026-11-25T10:47:00.265Z
+created: 2026-11-25T11:13:11.956Z
+modified: 2026-11-25T11:13:11.956Z
+published: 2026-11-25T11:13:11.956Z
 tags:
-  - MOC
+  - map
 categories:
 dg-publish: true
 ---
@@ -32,4 +32,7 @@ views:
     sort:
       - property: file.mtime
         direction: DESC
+    columnSize:
+      file.name: 455
+
 ```

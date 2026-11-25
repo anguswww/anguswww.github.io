@@ -1,10 +1,10 @@
 ---
 publish: true
-created: 2026-09-21T23:15:06.530Z
-modified: 2026-11-25T10:47:58.626Z
-published: 2026-11-25T10:47:58.626Z
+created: 2026-11-25T11:13:11.973Z
+modified: 2026-11-25T11:13:11.974Z
+published: 2026-11-25T11:13:11.974Z
 tags:
-  - MOC
+  - map
 categories:
 dg-publish: true
 ---
@@ -30,4 +30,7 @@ views:
     sort:
       - property: file.mtime
         direction: DESC
+    columnSize:
+      file.name: 463
+
 ```
