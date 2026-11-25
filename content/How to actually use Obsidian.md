@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-25T08:49:48.349Z
-modified: 2026-11-25T08:50:49.186Z
+modified: 2026-11-25T08:59:50.046Z
 tags:
   - Semi-Polished
 ---
@@ -81,19 +81,19 @@ I'll add a property called `categories` to my notes, making sure it is set to th
 
 Pressing `[[` in the properties field unlocks an important 'secret' feature.
 
-![[Attachments/Pasted image 20261124145055.png]]
+![[Attachments/Pasted image 20261124145055.png|482]]
 
 A category can be a link to our maps!
 
-![[Attachments/Pasted image 20261124145128.png]]
+![[Attachments/Pasted image 20261124145128.png|509]]
 
 Even better, if we add a categories property to our other notes it auto-suggests previously used links.
 
-![[Attachments/Pasted image 20261124145238.png]]
+![[Attachments/Pasted image 20261124145238.png|472]]
 
 Now I'll use `Cmd/Ctrl`+`P` to open the command palette, and search for `Backlinks: Toggle backlinks in document` so I can see all the notes that link to the map.
 
-![[Attachments/Pasted image 20261125182825.png]]
+![[Attachments/Pasted image 20261125182825.png|519]]
 
 Great, now I can see all of my notes related to philosophy. I don't like the way it looks though.
 
@@ -107,9 +107,9 @@ sort file.mtime DESC
 ```
 ````
 
-![[Attachments/Pasted image 20261124175254.png]]
-
 Great! Now all my notes are presented nicely in my map.
+
+![[Attachments/Pasted image 20261124175254.png]]
 
 You may want your notes displayed differently. I would recommend using an LLM to create custom queries that fit your needs, but you could also [learn dataview](https://blacksmithgu.github.io/obsidian-dataview/) and dataviewjs to make your own queries.
 
@@ -135,13 +135,13 @@ The [Templater](https://community.obsidian.md/plugins/templater-obsidian) plugin
 
 3. Set your template folder and turn on the 'Trigger Templater on new file creation' in the plugin settings.
 
-   ![[Attachments/Pasted image 20261124171941.png]]
+   ![[Attachments/Pasted image 20261124171941.png|491]]
 
-   ![[Attachments/Pasted image 20261124170029.png]]
+   ![[Attachments/Pasted image 20261124170029.png|464]]
 
 4. Under 'Folder templates,' add a rule for the / (root) directory and select your template.
 
-   ![[Attachments/Pasted image 20261124172108.png]]
+   ![[Attachments/Pasted image 20261124172108.png|497]]
 
 #### I want an easy way to have a daily journal.
 
