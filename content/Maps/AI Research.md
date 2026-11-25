@@ -3,13 +3,15 @@ publish: true
 aliases:
   - AI
 created: 2026-09-30T03:56:04.507Z
-modified: 2026-11-25T10:25:36.907Z
-published: 2026-11-25T10:25:36.907Z
+modified: 2026-11-25T10:47:00.265Z
+published: 2026-11-25T10:47:00.265Z
 tags:
   - MOC
 categories:
 dg-publish: true
 ---
+
+Notes related to AI research.
 
 ## Notes
 

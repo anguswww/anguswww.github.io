@@ -1,13 +1,15 @@
 ---
 publish: true
 created: 2026-09-21T23:15:06.530Z
-modified: 2026-11-25T10:29:17.784Z
-published: 2026-11-25T10:29:17.784Z
+modified: 2026-11-25T10:47:58.626Z
+published: 2026-11-25T10:47:58.626Z
 tags:
   - MOC
 categories:
 dg-publish: true
 ---
+
+Projects, both complete and in progress
 
 ## Notes
 
