@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-25T09:26:21.085Z
+modified: 2026-11-25T09:29:36.224Z
 tags:
   - Outline
 ---
@@ -21,6 +21,11 @@ i also use this note to test functionality
 ```base
 formulas:
   Untitled: ""
+properties:
+  file.name:
+    displayName: Name
+  file.ctime:
+    displayName: Created Time
 views:
   - type: table
     name: View
@@ -28,10 +33,12 @@ views:
       - file.name
       - file.ctime
     sort:
+      - property: file.ctime
+        direction: DESC
       - property: formula.Untitled
         direction: ASC
     columnSize:
-      file.name: 549
+      file.name: 504
   - type: list
     name: View 2
     filters:
