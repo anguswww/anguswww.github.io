@@ -576,6 +576,15 @@ article {
   & dd {
     color: var(--ink);
   }
+
+  // Justified body copy (experiment). Hyphenation keeps word spacing even.
+  & p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+    text-wrap: pretty;
+  }
 }
 
 article :is(h1, h2, h3, h4) {
