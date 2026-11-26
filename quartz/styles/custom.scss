@@ -594,6 +594,14 @@ article :is(h1, h2, h3, h4) {
   letter-spacing: -0.01em;
 }
 
+// Keep body copy close to the heading it belongs to.
+article :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0.35rem;
+}
+article :is(h1, h2, h3, h4, h5, h6) + * {
+  margin-top: 0;
+}
+
 article :is(h1, h2, h3, h4, h5, h6)[id] {
   scroll-margin-top: 1.5rem;
 }
@@ -601,21 +609,23 @@ article :is(h1, h2, h3, h4, h5, h6)[id] {
 article h1 {
   font-size: 2.2rem;
   line-height: 1.1;
+  margin-top: 1.5rem;
 }
 article h2 {
   font-size: 1.75rem;
   line-height: 1.15;
-  margin-top: 2.6rem;
+  margin-top: 1.75rem;
 }
 article h3 {
   font-size: 1.4rem;
   font-style: italic;
   font-weight: 400;
-  margin-top: 2rem;
+  margin-top: 1.35rem;
 }
 article h4 {
   font-size: 1.2rem;
   font-weight: 600;
+  margin-top: 1.1rem;
 }
 article h5,
 article h6 {
@@ -625,6 +635,7 @@ article h6 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--slate);
+  margin-top: 1rem;
 }
 
 strong,
@@ -1176,6 +1187,14 @@ article video {
 // naturally and stays ragged.
 article p > img {
   display: block;
+}
+// The line break between an image and its caption would otherwise leave an
+// empty line under the (now block) image.
+article p > img + br {
+  display: none;
+}
+article p > img:has(+ br) {
+  margin-bottom: 0.5rem;
 }
 
 article object[type="image/svg+xml"] {
