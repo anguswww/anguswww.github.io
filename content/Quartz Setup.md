@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-26T10:27:21.381Z
-published: 2026-11-26T10:27:21.381Z
+modified: 2026-11-26T10:29:25.369Z
+published: 2026-11-26T10:29:25.369Z
 tags:
   - Outline
 categories:
@@ -31,7 +31,7 @@ This note stores information on my Quartz setup for this site along with prospec
 
 Notes are graded on a scale using tags.
 
-#Outline dot points that probably don't make sense to anyone other than myself.
+#Outline notes are dot points that probably don't make sense to anyone other than myself.
 
 #Draft notes are minimally edited paragraphs. Basically anything that has moved beyond the dot-point stage.
 
