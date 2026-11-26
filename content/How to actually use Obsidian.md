@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T08:49:48.349Z
-modified: 2026-11-26T04:03:28.921Z
-published: 2026-11-26T04:03:28.921Z
+modified: 2026-11-26T04:21:37.860Z
+published: 2026-11-26T04:21:37.860Z
 tags:
   - Semi-Polished
 categories:
@@ -212,3 +212,7 @@ If tags work for you then that's great, and I won't try and convince you to swit
 I initially wrote them off, since I assumed you needed a separate .base file, but you can actually embed them in text. I'm keeping everything in this tutorial as Dataview for now, but I could easily be converted into a Bases evangelist.
 
 ![[Attachments/Pasted image 20261124175101.png]]
+
+#### What finally made Obsidian 'click' for you?
+
+Reading about and looking at [Steph Ango's vault](https://stephango.com/vault). This is where I got the "list of links to maps" idea from. I'm sure other tutorials mention this but buried under other distractions.
