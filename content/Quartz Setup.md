@@ -1,10 +1,9 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-26T10:29:25.369Z
-published: 2026-11-26T10:29:25.369Z
+modified: 2026-11-26T10:29:45.730Z
+published: 2026-11-26T10:29:45.730Z
 tags:
-  - Outline
 categories:
 dg-publish: true
 ---
