@@ -1,7 +1,7 @@
 {
   "name": "unescape-urls",
   "version": "1.0.0",
-  "description": "Strips markdown backslash escapes (e.g. \\_) that Quartz Syncer adds inside bare URLs.",
+  "description": "Strips markdown backslash escapes that Quartz Syncer adds inside bare URLs and before line-opening strikethroughs.",
   "type": "module",
   "license": "MIT",
   "exports": { ".": { "import": "./dist/index.js" }, "./package.json": "./package.json" },
