@@ -1170,6 +1170,14 @@ article video {
   border-radius: var(--r-lg);
 }
 
+// An image embedded at the end of a paragraph's text would otherwise sit
+// inline, forcing the preceding text line to wrap — and justify — as if it
+// weren't the paragraph's last line. As a block, the text before it ends
+// naturally and stays ragged.
+article p > img {
+  display: block;
+}
+
 article object[type="image/svg+xml"] {
   display: block;
   width: 100%;
