@@ -679,13 +679,13 @@ article a.external:hover .external-icon > path {
 }
 
 // A link to a note that isn't on the site (not written yet, or private):
-// crossed out in slate and inert (plugins/broken-links marks them).
+// greyed out in slate, still underlined, and inert (plugins/broken-links marks them).
 article a.internal.broken:not(.tag-link) {
   color: var(--slate);
-  text-decoration: line-through;
+  text-decoration: underline;
   text-decoration-color: var(--slate);
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 0;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
   cursor: default;
 
   &:hover {
