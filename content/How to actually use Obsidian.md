@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T08:49:48.349Z
-modified: 2026-11-26T04:02:51.978Z
-published: 2026-11-26T04:02:51.978Z
+modified: 2026-11-26T04:03:28.921Z
+published: 2026-11-26T04:03:28.921Z
 tags:
   - Semi-Polished
 categories:
@@ -118,7 +118,7 @@ Great! Now all my notes are presented nicely in my map.
 
 You may want your notes displayed differently. I would recommend using an LLM to create custom queries that fit your needs, but you could also [learn dataview](https://blacksmithgu.github.io/obsidian-dataview/) and dataviewjs to make your own queries.
 
-At this point we have a minimum viable Obsidian setup that avoids the most common pitfalls. I have a [vault template](https://github.com/anguswww/obsidian-vault-template/releases/latest) you should download that sets everything up along with some improvements, which are detailed in the appendix.
+At this point we have a minimum viable Obsidian setup that avoids the most common pitfalls. I have a [vault template](https://github.com/anguswww/obsidian-vault-template/releases/latest) you should download that sets everything up along with some improvements, which are detailed in the [[#appendix]].
 
 ## What should I do with my vault?
 
