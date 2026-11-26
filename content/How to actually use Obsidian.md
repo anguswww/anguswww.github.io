@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T08:49:48.349Z
-modified: 2026-11-25T12:47:25.731Z
-published: 2026-11-25T12:47:25.731Z
+modified: 2026-11-26T04:00:55.851Z
+published: 2026-11-26T04:00:55.851Z
 tags:
   - Semi-Polished
 categories:
@@ -119,6 +119,18 @@ Great! Now all my notes are presented nicely in my map.
 You may want your notes displayed differently. I would recommend using an LLM to create custom queries that fit your needs, but you could also [learn dataview](https://blacksmithgu.github.io/obsidian-dataview/) and dataviewjs to make your own queries.
 
 At this point we have a minimum viable Obsidian setup that avoids the most common pitfalls. I have a [vault template](https://github.com/anguswww/obsidian-vault-template/releases/latest) you should download that sets everything up along with some improvements, which are detailed in the appendix.
+
+## What should I do with my vault?
+
+Start writing about a topic or project. Create new maps and link to them when relevant. You can make maps for any topic you want. Some good examples are:
+
+- A topic you are interested in writing about or researching,
+- A project you are working on
+- A goal you are working towards
+- A class you are taking
+- Anything you want
+
+Try to link between your notes as much as possible.
 
 ---
 
