@@ -979,34 +979,6 @@ article input[type="checkbox"] {
   text-decoration-color: var(--slate);
 }
 
-// ── Blockquote: the character speaking ──────────────────────────────────────
-// No box, no bar. Serif in the character's colour, with its circle beside it.
-
-article blockquote:not(.callout):not(.transclude) {
-  position: relative;
-  margin: 1.75rem 0;
-  padding: 0 0 0 2.4rem;
-  border: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.2rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: var(--accent);
-    @include glyph-mask;
-  }
-
-  & p {
-    color: var(--accent-ink);
-    font-size: 1.3rem;
-    line-height: 1.45;
-    margin: 0 0 0.5rem;
-  }
-}
-
 // ── Rule: the cast in a row of dots ─────────────────────────────────────────
 
 article hr {
@@ -1211,8 +1183,9 @@ article pre:has(> code.mermaid) {
   border-radius: var(--r-lg) !important;
 }
 
-// Transclusion: a pale tinted page, like the Writer document.
-article blockquote.transclude {
+// Transclusion: a pale tinted page, like the Writer document. Plain quotes
+// share the look, so a quote reads like an embedded note.
+article blockquote:not(.callout) {
   border: none !important;
   border-radius: var(--r-lg);
   background: color-mix(in srgb, var(--accent) 12%, var(--tint-base));
