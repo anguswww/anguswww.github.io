@@ -1,15 +1,15 @@
 ---
 publish: true
 created: 2026-11-25T11:13:11.973Z
-modified: 2026-11-25T11:13:11.974Z
-published: 2026-11-25T11:13:11.974Z
+modified: 2026-11-26T04:56:46.626Z
+published: 2026-11-26T04:56:46.626Z
 tags:
   - map
 categories:
 dg-publish: true
 ---
 
-Projects, both complete and in progress
+_Projects, both complete and in progress._
 
 ## Notes
 

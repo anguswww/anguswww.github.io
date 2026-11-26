@@ -1,15 +1,15 @@
 ---
 publish: true
 created: 2026-11-25T11:13:11.965Z
-modified: 2026-11-25T11:13:11.965Z
-published: 2026-11-25T11:13:11.965Z
+modified: 2026-11-26T04:56:42.762Z
+published: 2026-11-26T04:56:42.762Z
 tags:
   - map
 categories:
 dg-publish: true
 ---
 
-Notes related to philosophy.
+_Notes related to philosophy._
 
 ## Notes
 

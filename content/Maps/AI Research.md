@@ -3,15 +3,15 @@ publish: true
 aliases:
   - AI
 created: 2026-11-25T11:13:11.956Z
-modified: 2026-11-25T11:13:11.956Z
-published: 2026-11-25T11:13:11.956Z
+modified: 2026-11-26T04:56:37.632Z
+published: 2026-11-26T04:56:37.632Z
 tags:
   - map
 categories:
 dg-publish: true
 ---
 
-Notes related to AI research.
+_Notes related to AI research._
 
 ## Notes
 

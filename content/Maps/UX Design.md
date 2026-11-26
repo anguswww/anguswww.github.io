@@ -1,15 +1,15 @@
 ---
 publish: true
 created: 2026-11-25T11:13:11.979Z
-modified: 2026-11-25T11:13:11.979Z
-published: 2026-11-25T11:13:11.979Z
+modified: 2026-11-26T04:56:40.347Z
+published: 2026-11-26T04:56:40.347Z
 tags:
   - map
 categories:
 dg-publish: true
 ---
 
-Notes related to UX design.
+_Notes related to UX design._
 
 ## Notes
 

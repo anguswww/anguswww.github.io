@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T09:07:52.674Z
-modified: 2026-11-26T03:27:34.227Z
-published: 2026-11-26T03:27:34.227Z
+modified: 2026-11-26T07:27:25.222Z
+published: 2026-11-26T07:27:25.222Z
 tags:
   - Outline
 categories:
@@ -39,7 +39,7 @@ Notes are graded on a scale using tags.
 
 #polished notes are essentially complete, with no real edits to be made.
 
-[Gwern](https://gwern.net/about#confidence-tags) seems to have independently come up with the similar categories.
+[Gwern](https://gwern.net/about#confidence-tags) seems to have independently come up with similar categories.
 
 ## Things to add/change
 
