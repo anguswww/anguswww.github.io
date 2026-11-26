@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-19T08:12:27.158Z
-modified: 2026-11-25T12:42:30.768Z
-published: 2026-11-25T12:42:30.768Z
+modified: 2026-11-26T03:30:10.192Z
+published: 2026-11-26T03:30:10.192Z
 tags:
   - "#Draft"
 categories:
@@ -49,5 +49,7 @@ Scale using tags: #Outline #Draft #Semi-Polished #Polished
 ## How can I make my own digital garden?
 
 Use [Obsidian](https://obsidian.md/) to write your content. I wrote [[How to actually use Obsidian]] to help people use it in an optimal way.
+
+From [[How to actually use Obsidian]]:
 
 ![[How to actually use Obsidian#Digital Gardening]]
