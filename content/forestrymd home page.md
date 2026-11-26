@@ -3,9 +3,10 @@ publish: true
 permalink: index
 title: Home
 created: 2026-11-20T04:01:29.816Z
-modified: 2026-11-26T03:45:28.028Z
-published: 2026-11-26T03:45:28.028Z
+modified: 2026-11-26T07:34:32.782Z
+published: 2026-11-26T07:34:32.782Z
 tags:
+  - map
 categories:
 dg-home: true
 dg-publish: true
