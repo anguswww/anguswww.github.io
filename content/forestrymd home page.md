@@ -3,8 +3,8 @@ publish: true
 permalink: index
 title: Home
 created: 2026-11-20T04:01:29.816Z
-modified: 2026-11-25T13:02:13.344Z
-published: 2026-11-25T13:02:13.344Z
+modified: 2026-11-26T03:45:28.028Z
+published: 2026-11-26T03:45:28.028Z
 tags:
 categories:
 dg-home: true
@@ -15,7 +15,7 @@ Hi! I'm Angus, currently a Computer Science student. I'm interested in modelling
 
 This site is a [[Digital Gardening|Digital Garden]], filled with ideas, projects, and research that hasn't yet fully formed. The content here isn't necessarily ready to publish, it's mostly work in progress.
 
-Tags are used to specify the current state of pages:
+[[Quartz Setup#Status tags|Tags]] are used to specify the current state of pages:
 
 #Outline → #Draft → #Semi-Polished → #Polished
 

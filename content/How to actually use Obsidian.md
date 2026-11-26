@@ -1,8 +1,8 @@
 ---
 publish: true
 created: 2026-11-25T08:49:48.349Z
-modified: 2026-11-26T04:00:55.851Z
-published: 2026-11-26T04:00:55.851Z
+modified: 2026-11-26T04:02:51.978Z
+published: 2026-11-26T04:02:51.978Z
 tags:
   - Semi-Polished
 categories:
@@ -130,7 +130,7 @@ Start writing about a topic or project. Create new maps and link to them when re
 - A class you are taking
 - Anything you want
 
-Try to link between your notes as much as possible.
+Try to link between your notes as much as possible. If you want to create a [[Digital Gardening|Digital Garden]], look at the [[#Digital Gardening]] section of this note.
 
 ---
 
