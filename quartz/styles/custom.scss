@@ -762,18 +762,6 @@ a.internal.tag-link {
   }
 }
 
-// A paragraph made only of tag chips (e.g. the status sequence on the home
-// page) is a row of chips, not prose: don't justify it, wrap it as a flex row.
-article p:has(> a.tag-link:first-child):not(:has(> :not(a.tag-link))) {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem 0.45rem;
-  text-align: left;
-  // Hide the text between chips (e.g. "→"); chips set their own rem size.
-  font-size: 0;
-}
-
 // inline #tag with no tag page yet (oculus.inline.ts): show the chip, not a link
 a.internal.tag-link[data-no-page] {
   pointer-events: none;
