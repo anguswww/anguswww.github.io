@@ -1,6 +1,6 @@
 import micromorph from "micromorph"
 import { FullSlug, RelativeURL, getFullSlug, normalizeRelativeURLs } from "../../util/path"
-import { fetchCanonical } from "./util"
+import { fetchCanonical, holdScroll } from "./util"
 
 // adapted from `micromorph`
 // https://github.com/natemoo-re/micromorph
@@ -64,6 +64,23 @@ function stopLoading() {
 
 let isNavigating = false
 let p: DOMParser
+let stopHold: (() => void) | undefined
+
+// Jump to `#id` and stay on it while images above it load (see holdScroll)
+function scrollToHash(hash: string) {
+  stopHold?.()
+  stopHold = undefined
+  const id = decodeURIComponent(hash.substring(1))
+  if (!document.getElementById(id)) return
+  // looked up each time: the page being replaced can have an element with the same
+  // id (e.g. a transclusion of this very section), and morphing may swap nodes
+  // instant: base.scss sets `scroll-behavior: smooth`, and a smooth scroll restarted on
+  // every image load never catches up with the heading it's chasing
+  stopHold = holdScroll(
+    () => document.getElementById(id)?.scrollIntoView({ behavior: "instant" }),
+    [document.body],
+  )
+}
 async function _navigate(url: URL, isBack: boolean = false) {
   isNavigating = true
   startLoading()
@@ -104,6 +121,9 @@ async function _navigate(url: URL, isBack: boolean = false) {
 
   if (!contents) return
 
+  stopHold?.()
+  stopHold = undefined
+
   // notify about to nav
   const event: CustomEventMap["prenav"] = new CustomEvent("prenav", { detail: {} })
   document.dispatchEvent(event)
@@ -134,8 +154,7 @@ async function _navigate(url: URL, isBack: boolean = false) {
   // scroll into place and add history
   if (!isBack) {
     if (url.hash) {
-      const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
-      el?.scrollIntoView()
+      scrollToHash(url.hash)
     } else {
       window.scrollTo({ top: 0 })
     }
@@ -182,8 +201,9 @@ function createRouter() {
       event.preventDefault()
 
       if (isSamePage(url) && url.hash) {
-        const el = document.getElementById(decodeURIComponent(url.hash.substring(1)))
-        el?.scrollIntoView()
+        // same page: everything has loaded, so the smooth scroll is fine
+        stopHold?.()
+        document.getElementById(decodeURIComponent(url.hash.substring(1)))?.scrollIntoView()
         history.pushState({}, "", url)
         return
       }

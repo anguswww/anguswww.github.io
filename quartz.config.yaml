@@ -85,6 +85,10 @@ plugins:
   - source: ./plugins/obsidian-list-breaks
     enabled: true
     order: 6
+  # Links to notes that aren't on the site are crossed out (see plugins/broken-links)
+  - source: ./plugins/broken-links
+    enabled: true
+    order: 65
   # "Showing 3 of 3 entries" above bases views → "3 entries" (see plugins/bases-count)
   - source: ./plugins/bases-count
     enabled: true
@@ -101,7 +105,8 @@ plugins:
     enabled: true
     options:
       enableInHtmlEmbed: false
-      enableCheckbox: true
+      # Task checkboxes show the note's own state; visitors can't tick them
+      enableCheckbox: false
       comments: true
       highlight: true
       wikilinks: true
@@ -321,9 +326,10 @@ layout:
       gap: 0.5rem
   byPageType:
     "404":
+      # keep the left panel (explorer, search) so a dead end isn't a dead end
+      template: default
       positions:
         beforeBody: []
-        left: []
         right: []
     content: {}
     folder:

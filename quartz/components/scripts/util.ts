@@ -44,3 +44,41 @@ export async function fetchCanonical(url: URL, init?: RequestInit): Promise<Resp
   const [_, redirect] = text.match(canonicalRegex) ?? []
   return redirect ? fetch(`${new URL(redirect, url)}`, init) : res
 }
+
+const USER_SCROLL_EVENTS = ["wheel", "touchstart", "keydown", "mousedown"] as const
+
+/**
+ * Scroll to an anchor and keep it there while the content around it settles.
+ *
+ * Images (and embeds) above the anchor load after the first scroll and push it down,
+ * so a link to `note#heading` used to land thousands of pixels short. Each time one of
+ * `watch` changes size the scroll is redone, until the reader scrolls themselves, or
+ * `maxMs` passes. Returns a function that stops it early (e.g. on the next navigation).
+ */
+export function holdScroll(scroll: () => void, watch: Element[], maxMs = 8000): () => void {
+  scroll()
+  let done = false
+  const rescroll = () => {
+    if (!done) scroll()
+  }
+  const observer = new ResizeObserver(rescroll)
+  // an image's `load` doesn't bubble, but it can be caught on the way down
+  const onLoad = (e: Event) => {
+    if (watch.some((el) => el.contains(e.target as Node))) requestAnimationFrame(rescroll)
+  }
+  const stop = () => {
+    if (done) return
+    done = true
+    observer.disconnect()
+    clearTimeout(timer)
+    document.removeEventListener("load", onLoad, true)
+    for (const ev of USER_SCROLL_EVENTS) window.removeEventListener(ev, stop, true)
+  }
+  for (const el of watch) observer.observe(el)
+  document.addEventListener("load", onLoad, true)
+  const timer = setTimeout(stop, maxMs)
+  for (const ev of USER_SCROLL_EVENTS) {
+    window.addEventListener(ev, stop, { capture: true, passive: true })
+  }
+  return stop
+}

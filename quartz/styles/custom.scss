@@ -11,9 +11,11 @@ $glyphs: (
   warp: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cmask id='m'%3E%3Crect width='24' height='24' fill='%23fff'/%3E%3Cg fill='%23000' transform='rotate(-35 12 12)'%3E%3Crect x='-4' y='7.2' width='20' height='2.6'/%3E%3Crect x='8' y='14.2' width='20' height='2.6'/%3E%3C/g%3E%3C/mask%3E%3Ccircle cx='12' cy='12' r='10' fill='%23000' mask='url(%23m)'/%3E%3C/svg%3E"),
   ember: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23000'%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(0.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(25.714285714285715 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(51.42857142857143 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(77.14285714285714 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(102.85714285714286 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(128.57142857142858 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(154.28571428571428 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(180.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(205.71428571428572 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(231.42857142857142 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(257.14285714285717 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(282.85714285714283 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(308.57142857142856 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(334.2857142857143 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='3.6' fill='%23000'/%3E%3C/svg%3E"),
   blossom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23000'%3E%3Ccircle cx='12.00' cy='6.80' r='4.6'/%3E%3Ccircle cx='16.95' cy='10.39' r='4.6'/%3E%3Ccircle cx='15.06' cy='16.21' r='4.6'/%3E%3Ccircle cx='8.94' cy='16.21' r='4.6'/%3E%3Ccircle cx='7.05' cy='10.39' r='4.6'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='2.4' fill='%23fff'/%3E%3C/svg%3E"),
+  // polished: a cut gem ("coal into diamonds"), so it isn't the plain no-status circle
+  gem: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cmask id='g'%3E%3Crect width='24' height='24' fill='%23fff'/%3E%3Cpath d='M2 9.6H22M8.6 9.6L12 21M15.4 9.6L12 21M8.6 9.6L10.4 3.4M15.4 9.6L13.6 3.4' stroke='%23000' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/mask%3E%3Cpath d='M6.8 3.4H17.2L22.4 9.6L12 21.8L1.6 9.6Z' fill='%23000' stroke='%23000' stroke-width='1.2' stroke-linejoin='round' mask='url(%23g)'/%3E%3C/svg%3E"),
   leaf: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.8 C19.5 6 19.5 18 12 22.2 C4.5 18 4.5 6 12 1.8Z' fill='%23000' transform='rotate(35 12 12)'/%3E%3C/svg%3E"),
 );
-$dock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 162 24'%3E%3Cg transform='translate(0 0)'%3E%3Cg fill='%23ff7859'%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(0.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(25.714285714285715 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(51.42857142857143 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(77.14285714285714 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(102.85714285714286 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(128.57142857142858 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(154.28571428571428 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(180.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(205.71428571428572 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(231.42857142857142 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(257.14285714285717 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(282.85714285714283 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(308.57142857142856 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(334.2857142857143 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='3.6' fill='%23ff7859'/%3E%3C/g%3E%3Cpath d='M29 12 H41 M37 8.5 L41 12 L37 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(46 0)'%3E%3Cpolygon points='12.00,0.50 14.53,5.90 20.13,3.87 18.10,9.47 23.50,12.00 18.10,14.53 20.13,20.13 14.53,18.10 12.00,23.50 9.47,18.10 3.87,20.13 5.90,14.53 0.50,12.00 5.90,9.47 3.87,3.87 9.47,5.90' fill='%23ffb800' stroke='%23ffb800' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/g%3E%3Cpath d='M75 12 H87 M83 8.5 L87 12 L83 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(92 0)'%3E%3Cpath d='M12 1.8 C19.5 6 19.5 18 12 22.2 C4.5 18 4.5 6 12 1.8Z' fill='%231dcb43' transform='rotate(35 12 12)'/%3E%3C/g%3E%3Cpath d='M121 12 H133 M129 8.5 L133 12 L129 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(138 0)'%3E%3Ccircle cx='12' cy='12' r='10' fill='%2327b9ff'/%3E%3C/g%3E%3C/svg%3E");
+$dock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 162 24'%3E%3Cg transform='translate(0 0)'%3E%3Cg fill='%23ff7859'%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(0.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(25.714285714285715 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(51.42857142857143 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(77.14285714285714 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(102.85714285714286 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(128.57142857142858 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(154.28571428571428 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(180.0 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(205.71428571428572 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(231.42857142857142 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(257.14285714285717 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(282.85714285714283 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(308.57142857142856 12 12)'/%3E%3Crect x='10.85' y='0.5999999999999996' width='2.3' height='5.2' rx='1.15' transform='rotate(334.2857142857143 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='3.6' fill='%23ff7859'/%3E%3C/g%3E%3Cpath d='M29 12 H41 M37 8.5 L41 12 L37 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(46 0)'%3E%3Cpolygon points='12.00,0.50 14.53,5.90 20.13,3.87 18.10,9.47 23.50,12.00 18.10,14.53 20.13,20.13 14.53,18.10 12.00,23.50 9.47,18.10 3.87,20.13 5.90,14.53 0.50,12.00 5.90,9.47 3.87,3.87 9.47,5.90' fill='%23ffb800' stroke='%23ffb800' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/g%3E%3Cpath d='M75 12 H87 M83 8.5 L87 12 L83 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(92 0)'%3E%3Cpath d='M12 1.8 C19.5 6 19.5 18 12 22.2 C4.5 18 4.5 6 12 1.8Z' fill='%231dcb43' transform='rotate(35 12 12)'/%3E%3C/g%3E%3Cpath d='M121 12 H133 M129 8.5 L133 12 L129 15.5' fill='none' stroke='%238ea4b8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg transform='translate(138 0)'%3E%3Cmask id='g'%3E%3Crect width='24' height='24' fill='%23fff'/%3E%3Cpath d='M2 9.6H22M8.6 9.6L12 21M15.4 9.6L12 21M8.6 9.6L10.4 3.4M15.4 9.6L13.6 3.4' stroke='%23000' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/mask%3E%3Cpath d='M6.8 3.4H17.2L22.4 9.6L12 21.8L1.6 9.6Z' fill='%2327b9ff' stroke='%2327b9ff' stroke-width='1.2' stroke-linejoin='round' mask='url(%23g)'/%3E%3C/g%3E%3C/svg%3E");
 $dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 12'%3E%3Ccircle cx='6' cy='6' r='4' fill='%23ff7859'/%3E%3Ccircle cx='22' cy='6' r='4' fill='%23ffb800'/%3E%3Ccircle cx='38' cy='6' r='4' fill='%231dcb43'/%3E%3Ccircle cx='54' cy='6' r='4' fill='%2327b9ff'/%3E%3C/svg%3E");
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -116,6 +118,25 @@ $status-char: (
   polished: open,
 );
 
+// status → glyph. Mostly the character's own mark; polished is a gem, because
+// the plain circle also means "no status yet".
+$status-glyph: (
+  outline: ember,
+  draft: sunny,
+  semi-polished: leaf,
+  polished: gem,
+);
+
+// A page's status colour and glyph, for the page itself (body) and for a
+// popover previewing another page.
+@mixin status-vars($st) {
+  $c: map.get($status-char, $st);
+  --glyph: #{map.get($glyphs, map.get($status-glyph, $st))};
+  --accent: var(--#{$c});
+  --on-accent: var(--on-#{$c});
+  --accent-ink: var(--#{$c}-ink);
+}
+
 // Map notes take violet and the rounded square. Listed after the statuses
 // below so it wins if a map also carries a status tag.
 @mixin map-page {
@@ -127,18 +148,29 @@ $status-char: (
 
 // The page's own status comes from the tag row in its header (not from the
 // "Recently updated" list, which carries every status).
+// A popover of a page with no status is slate, not the current page's colour
+// (the status rules below are more specific, so they win).
+.popover {
+  --glyph: #{map.get($glyphs, open)};
+  --accent: var(--slate);
+  --on-accent: #ffffff;
+  --accent-ink: var(--slate);
+}
+// A popover (popover.inline.ts) holds the other page's header, without the
+// .page-header wrapper, so it never matches the body rule; it gets its own.
 @each $st, $c in $status-char {
-  body:has(.page-header ul.tags a.tag-link[href$="/#{$st}" i]) {
-    --glyph: #{map.get($glyphs, $c)};
-    --accent: var(--#{$c});
-    --on-accent: var(--on-#{$c});
-    --accent-ink: var(--#{$c}-ink);
+  body:has(.page-header ul.tags a.tag-link[href$="/#{$st}" i]),
+  .popover:has(.popover-inner > .popover-hint > ul.tags a.tag-link[href$="/#{$st}" i]) {
+    @include status-vars($st);
   }
 }
 body:has(.page-header ul.tags a.tag-link[href$="/map" i]),
-body[data-slug="index"] {
+body[data-slug="index"],
+.popover:has(.popover-inner > .popover-hint > ul.tags a.tag-link[href$="/map" i]),
+.popover[data-slug="index"] {
   @include map-page;
 }
+
 
 // ── Canvas ──────────────────────────────────────────────────────────────────
 
@@ -433,7 +465,7 @@ section.footnotes > h2 {
   @each $st, $c in $status-char {
     & .explorer-content ul li > a[data-status="#{$st}"] {
       --dot: var(--#{$c});
-      --glyph: #{map.get($glyphs, $c)};
+      --glyph: #{map.get($glyphs, map.get($status-glyph, $st))};
     }
   }
   & .explorer-content ul li > a[data-status="map"] {
@@ -441,12 +473,33 @@ section.footnotes > h2 {
     --glyph: #{map.get($glyphs, map)};
   }
 
+  // Folder rows: the arrow opens and closes the folder; the rest of the row is
+  // the folder's link (and opens it, see plugins/site-explorer). Both targets
+  // are a full row tall, rather than a 12px arrow and the bare word.
   & .folder-container {
     & .folder-title {
       font-weight: 600;
     }
-    & svg {
+    & > svg.folder-icon {
+      box-sizing: content-box;
+      flex: none;
+      padding: 0.45rem;
+      margin: 0 -0.3rem 0 -0.45rem;
       color: var(--slate);
+      &:hover {
+        color: var(--dark);
+      }
+    }
+    & > div {
+      flex: 1;
+      min-width: 0;
+    }
+    & a.folder-button {
+      display: block;
+      padding: 0.1rem 1.25rem 0.1rem 0.3rem;
+      &:hover .folder-title {
+        color: var(--dark);
+      }
     }
   }
 }
@@ -489,8 +542,10 @@ h1.article-title {
   }
 }
 
-// Home: the whole cast stands above the title.
-body[data-slug="index"] h1.article-title {
+// Home: the whole cast stands above the title (on Home itself, and in a
+// popover of Home; not in popovers of other pages shown on Home).
+body[data-slug="index"] .page-header h1.article-title,
+.popover[data-slug="index"] h1.article-title {
   flex-direction: column;
   align-items: flex-start;
   gap: 1.1rem;
@@ -528,6 +583,10 @@ article :is(h1, h2, h3, h4) {
   color: var(--dark);
   font-weight: 500;
   letter-spacing: -0.01em;
+}
+
+article :is(h1, h2, h3, h4, h5, h6)[id] {
+  scroll-margin-top: 1.5rem;
 }
 
 article h1 {
@@ -608,6 +667,23 @@ article a.external .external-icon {
 
 article a.external:hover .external-icon > path {
   opacity: 1;
+}
+
+// A link to a note that isn't on the site (not written yet, or private):
+// crossed out in slate and inert (plugins/broken-links marks them).
+article a.internal.broken:not(.tag-link) {
+  color: var(--slate);
+  text-decoration: line-through;
+  text-decoration-color: var(--slate);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0;
+  cursor: default;
+
+  &:hover {
+    background: none;
+    color: var(--slate);
+    text-decoration-color: var(--slate);
+  }
 }
 
 article :is(h1, h2, h3, h4, h5, h6) a.internal {
@@ -830,8 +906,11 @@ article ul:not(.overflow):not(.tags):not(.section-ul) {
       background: var(--accent);
     }
   }
-  & ul > li:not(.task-list-item)::before {
-    background: var(--slate);
+  // Nested bullets (under a bullet or a number): a ring in the same colour,
+  // so every level reads as the page's while the hierarchy still shows.
+  & li ul > li:not(.task-list-item)::before {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--accent);
   }
 }
 
@@ -845,12 +924,15 @@ article input[type="checkbox"] {
   -webkit-appearance: none;
   width: 1.05rem;
   height: 1.05rem;
-  margin: 0 0.55rem 0 -1.5rem;
+  margin: 0 0.6rem 0 -1.5rem;
   vertical-align: -0.12em;
   border-radius: 50%;
   border: 2px solid var(--slate);
   background: transparent;
-  cursor: pointer;
+  // tasks show the note's state; they can't be ticked on the site
+  cursor: default;
+  opacity: 1;
+  transform: none;
 
   &:checked {
     border: none;
@@ -858,6 +940,12 @@ article input[type="checkbox"] {
     box-shadow: inset 0 0 0 3.5px var(--light);
     outline: 2px solid var(--accent);
     outline-offset: -2px;
+  }
+  // base.scss draws a tick on top; the filled circle already says "done"
+  &::after,
+  &:checked::after {
+    content: none;
+    display: none;
   }
 }
 
@@ -1087,8 +1175,34 @@ article blockquote.transclude {
   border: none !important;
   border-radius: var(--r-lg);
   background: color-mix(in srgb, var(--accent) 12%, var(--tint-base));
-  padding: 0.6rem 1.4rem !important;
+  padding: 1.1rem 1.4rem 0.9rem !important;
   margin: 1.4rem 0;
+
+  // the embedded section's heading keeps its in-page top margin (2rem+),
+  // which left a tall empty band above it inside the box
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  & > a.transclude-src {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-family: var(--uiFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    text-decoration: none;
+    &:hover {
+      background: none;
+      color: var(--dark);
+      text-decoration: none;
+    }
+  }
 }
 
 // ── Callouts: a coloured frame around a tinted page (the Writer tool) ──────
@@ -1364,6 +1478,174 @@ article blockquote.transclude {
     &:hover {
       color: var(--accent-ink);
     }
+  }
+}
+
+// ── Bases (the note lists on maps) ──────────────────────────────────────────
+// Like the backlinks: each note with its status mark, then its dates in slate.
+
+article .bases-page {
+  margin: 1rem 0 1.6rem;
+
+  & .bases-view-meta {
+    font-family: var(--uiFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+    margin: 0 0 0.3rem;
+  }
+
+  & .table-container {
+    margin: 0;
+  }
+
+  & table.bases-table {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    table-layout: auto;
+
+    & th,
+    & td {
+      // column widths saved in the .base file are for Obsidian's pane
+      width: auto !important;
+      min-width: 0 !important;
+      line-height: 1.4;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.25rem 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: middle;
+    }
+    & th:first-child,
+    & td:first-child {
+      width: 100% !important;
+    }
+    & th:last-child,
+    & td:last-child {
+      padding-right: 0;
+    }
+
+    & thead th {
+      position: relative;
+      background: none;
+      color: var(--slate);
+      font-size: 0.72rem;
+      white-space: nowrap;
+      border-bottom: 1.5px solid var(--rule);
+      user-select: none;
+      &:hover {
+        color: var(--ink);
+      }
+      // room for the sort arrow once a column is sorted
+      &[data-sort-direction="asc"],
+      &[data-sort-direction="desc"] {
+        padding-right: 1.25rem;
+        color: var(--ink);
+      }
+    }
+    & .bases-table-header-sort {
+      right: 0.2rem;
+      width: 6px;
+      height: 6px;
+      border-right-width: 1.5px;
+      border-bottom-width: 1.5px;
+      border-color: transparent;
+    }
+    & th[data-sort-direction="asc"] .bases-table-header-sort,
+    & th[data-sort-direction="desc"] .bases-table-header-sort {
+      border-right-color: currentColor;
+      border-bottom-color: currentColor;
+    }
+
+    & tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    & td:not(:first-child) {
+      white-space: nowrap;
+      color: var(--slate);
+      font-variant-numeric: tabular-nums;
+    }
+
+    & td a.internal:not(.tag-link) {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+      background: none;
+      border-radius: 0;
+
+      &::before {
+        content: "";
+        flex: none;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background: var(--dot, var(--slate));
+      }
+      &:hover {
+        background: none;
+        color: var(--dark);
+        text-decoration: underline;
+        text-decoration-color: var(--dot, var(--slate));
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.18em;
+      }
+    }
+    @each $st, $c in $status-char {
+      & td a[data-status="#{$st}"] {
+        --dot: var(--#{$c});
+      }
+    }
+    & td a[data-status="map"] {
+      --dot: var(--warp);
+      &::before {
+        border-radius: 0.17rem;
+      }
+    }
+  }
+}
+
+// ── 404 ─────────────────────────────────────────────────────────────────────
+// Keeps the panel (explorer, search) so the reader can go on from here.
+
+body[data-slug="404"] .center article {
+  padding-top: 3rem;
+
+  & > h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: clamp(2.4rem, 4.4vw, 3.3rem);
+    font-weight: 400;
+    margin: 0 0 0.9rem;
+
+    &::before {
+      content: "";
+      width: 0.72em;
+      height: 0.72em;
+      background: var(--slate);
+      -webkit-mask: #{map.get($glyphs, open)} center / contain no-repeat;
+      mask: #{map.get($glyphs, open)} center / contain no-repeat;
+    }
+  }
+  & > a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-family: var(--uiFont);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: underline;
+    text-decoration-color: var(--slate);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
   }
 }
 

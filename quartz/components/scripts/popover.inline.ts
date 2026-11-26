@@ -1,6 +1,6 @@
 import { computePosition, flip, inline, shift } from "@floating-ui/dom"
 import { normalizeRelativeURLs } from "../../util/path"
-import { fetchCanonical } from "./util"
+import { fetchCanonical, holdScroll } from "./util"
 
 const p = new DOMParser()
 let activeAnchor: HTMLAnchorElement | null = null
@@ -35,8 +35,13 @@ async function mouseEnterHandler(
         const targetAnchor = `#popover-internal-${hash.slice(1)}`
         const heading = inner.querySelector(targetAnchor) as HTMLElement | null
         if (heading) {
-          // leave ~12px of buffer when scrolling to a heading
-          inner.scroll({ top: heading.offsetTop - 12, behavior: "instant" })
+          // leave ~12px of buffer when scrolling to a heading, and hold it there
+          // while images above it load (they used to push it out of view)
+          holdScroll(
+            () => inner.scroll({ top: heading.offsetTop - 12, behavior: "instant" }),
+            [...inner.children],
+            3000,
+          )
         }
       }
     }
@@ -105,6 +110,8 @@ async function mouseEnterHandler(
         const targetID = `popover-internal-${el.id}`
         el.id = targetID
       })
+      // the target page's slug, so CSS can colour the popover by that page (custom.scss)
+      if (html.body.dataset.slug) popoverElement.dataset.slug = html.body.dataset.slug
       const elts = [...html.getElementsByClassName("popover-hint")]
       if (elts.length === 0) return
 

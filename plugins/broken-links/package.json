@@ -1,0 +1,20 @@
+{
+  "name": "broken-links",
+  "version": "1.0.0",
+  "description": "Marks internal links to pages that aren't on the site with the class `broken`.",
+  "type": "module",
+  "license": "MIT",
+  "exports": { ".": { "import": "./dist/index.js" }, "./package.json": "./package.json" },
+  "main": "./dist/index.js",
+  "quartz": {
+    "name": "broken-links",
+    "displayName": "Broken Links",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.1.0",
+    "dependencies": [],
+    "defaultOrder": 65,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  }
+}

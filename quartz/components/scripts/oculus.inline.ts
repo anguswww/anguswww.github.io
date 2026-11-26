@@ -61,7 +61,7 @@ async function mark() {
   const idx = await loadIndex()
   unlinkMissingTags(idx)
   const links = document.querySelectorAll<HTMLAnchorElement>(
-    ".explorer a[href], .backlinks a[href], .recent-notes a.internal:not(.tag-link)",
+    ".explorer a[href], .backlinks a[href], .recent-notes a.internal:not(.tag-link), article .bases-table td a.internal:not(.tag-link)",
   )
   for (const a of links) {
     if (a.getAttribute("href")?.startsWith("#")) continue
@@ -124,6 +124,18 @@ async function moveCategories() {
   nav.remove()
 }
 
+// A task's text starts with the space after its checkbox; a checked task's
+// strikethrough then begins in the gap ("-Checked task"). Drop that space
+// (the checkbox has its own margin).
+function trimTaskSpaces() {
+  for (const box of document.querySelectorAll<HTMLInputElement>("article li input[type='checkbox']")) {
+    const next = box.nextSibling
+    if (next?.nodeType === Node.TEXT_NODE && /^\s/.test(next.textContent ?? "")) {
+      next.textContent = next.textContent!.replace(/^\s+/, "")
+    }
+  }
+}
+
 let scheduled = false
 function schedule() {
   if (scheduled) return
@@ -140,6 +152,29 @@ const observer = new MutationObserver(schedule)
 document.addEventListener("nav", () => {
   observer.disconnect()
   void moveCategories()
+  trimTaskSpaces()
+  // The 404 page is served at whatever URL was missing, so its relative links
+  // (the wordmark's ".") resolve against that path. Point it at the site root.
+  if (document.body.dataset.slug === "404") {
+    const base = (document.body.dataset.basepath ?? "").replace(/\/$/, "")
+    document.querySelector<HTMLAnchorElement>(".page-title a")?.setAttribute("href", base + "/")
+  }
   observer.observe(document.body, { childList: true, subtree: true })
   schedule()
 })
+
+// Crossed-out links (plugins/broken-links) go nowhere: don't open the 404.
+// Capture phase, so it runs before the SPA router's window listener.
+if (!(window as unknown as { __oculusBroken?: boolean }).__oculusBroken) {
+  ;(window as unknown as { __oculusBroken?: boolean }).__oculusBroken = true
+  document.addEventListener(
+    "click",
+    (e) => {
+      const a = (e.target as Element | null)?.closest?.("a.broken")
+      if (!a) return
+      e.preventDefault()
+      e.stopPropagation()
+    },
+    true,
+  )
+}
