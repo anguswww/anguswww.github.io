@@ -3,8 +3,8 @@ publish: true
 permalink: index
 title: Home
 created: 2026-11-20T04:01:29.816Z
-modified: 2026-11-26T08:50:38.406Z
-published: 2026-11-26T08:50:38.406Z
+modified: 2026-11-26T09:53:10.679Z
+published: 2026-11-26T09:53:10.679Z
 tags:
   - map
 categories:
@@ -19,8 +19,6 @@ This site is a [[Digital Gardening|Digital Garden]], filled with ideas, projects
 [[Quartz Setup#Status tags|Tags]] are used to specify the current state of pages:
 
 #Outline #Draft  #Semi-Polished #Polished
-
-## Links
 
 | Email                | GitHub                      |
 | -------------------- | --------------------------- |
