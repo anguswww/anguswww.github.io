@@ -1342,6 +1342,11 @@ article blockquote.transclude {
 
 // ── Popovers ────────────────────────────────────────────────────────────────
 
+// A preview starts at the note's title: the breadcrumb path is page chrome
+.popover .breadcrumb-container {
+  display: none;
+}
+
 .popover > .popover-inner {
   border: 1.5px solid var(--rule);
   border-radius: var(--r-lg);
